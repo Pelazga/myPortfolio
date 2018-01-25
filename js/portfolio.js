@@ -8,7 +8,7 @@ var textGall = document.getElementById("seoTextProjects");
 var tabs = document.getElementsByClassName("tabb");
 var gallery = document.getElementsByClassName("gallery-section");
 
-function removeActivatingClass (arr, className, arr2, className2){
+function removeActivatingClass (arrOfLinks, linkClassName, arrOfDivs, divClassName){
     function removeClass (arr, className){
         for (i=0; i<=arr.length-1; i++) {
             if (arr[i].classList.contains(className)){
