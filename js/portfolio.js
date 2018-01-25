@@ -1,6 +1,9 @@
 var projectLink = document.getElementById("webPages");
+var projectGall = document.getElementById("webProjects");
 var translationLink = document.getElementById("translations");
+var translationGall = document.getElementById("translationProjects");
 var textLink = document.getElementById("seoText");
+var textGall = document.getElementById("seoTextProjects");
 
 var tabs = document.getElementsByClassName("tabb");
 var gallery = document.getElementsByClassName("gallery-section");
