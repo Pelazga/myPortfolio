@@ -1,0 +1,58 @@
+var projectLink = document.getElementById("webPages");
+var projectGall = document.getElementById("webProjects");
+var translationLink = document.getElementById("translations");
+var translationGall = document.getElementById("translationProjects");
+var textLink = document.getElementById("seoText");
+var textGall = document.getElementById("seoTextProjects");
+
+
+function projectDeactivate() {
+    if (projectGall.classList.contains("gallery-section-active")){
+        projectGall.classList.remove("gallery-section-active");
+    };
+    if (projectLink.classList.contains("active")){
+        projectLink.classList.remove("active");
+    };
+};
+function translationDeactivate() {
+    if (translationGall.classList.contains("gallery-section-active")){
+        translationGall.classList.remove("gallery-section-active");
+    };
+    if (translationLink.classList.contains("active")){
+        translationLink.classList.remove("active");
+    };
+};
+function textDeactivate() {
+    if (textGall.classList.contains("gallery-section-active")){
+        textGall.classList.remove("gallery-section-active");
+    };
+    if (textLink.classList.contains("active")){
+        textLink.classList.remove("active");
+    };
+};
+
+
+projectLink.onclick = function() {
+    translationDeactivate();
+    textDeactivate();
+    setTimeout(function() {
+        projectGall.classList.add("gallery-section-active");
+        projectLink.classList.add("active");
+    }, 250);
+};
+translationLink.onclick = function() {
+    textDeactivate();
+    projectDeactivate();
+    setTimeout(function() {
+        translationGall.classList.add("gallery-section-active");
+        translationLink.classList.add("active");
+    }, 250);
+};
+textLink.onclick = function() {
+    translationDeactivate();
+    projectDeactivate();
+    setTimeout(function() {
+        textGall.classList.add("gallery-section-active");
+        textLink.classList.add("active");
+    }, 250);
+};
