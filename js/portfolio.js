@@ -27,7 +27,6 @@ projectLink.onclick = function() {
         projectGall.classList.add("gallery-section-active");
     }, 250);
 };
-
 translationLink.onclick = function() {
     removeActivatingClass(tabs, "active", gallery, "gallery-section-active");
     setTimeout(function() {
