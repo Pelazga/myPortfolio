@@ -148,20 +148,20 @@ input[id="menu-btn"]{
     }
     &:checked ~ .cite-wraper .menu-container{
         width: $menu-width;
-        transition: 0.25s;
-        -webkit-transition: 0.25s;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
     }
     &:checked ~ .cite-wraper .body-container{
         width: auto;
-        transition: 0.25s;
-        -webkit-transition: 0.25s;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
     }
     &:checked ~ .menu-btn div:first-child{
         transform: matrix(1, -1, 1, 1, 12, 15);
         -ms-transform: matrix(1, -1, 1, 1, 12, 15); /* IE 9 */
         -webkit-transform: matrix(1, -1, 1, 1, 12, 15);
-        transition: 0.25s;
-        -webkit-transition: 0.25s;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
         width: 30px;
         height: 3px;
     }
@@ -171,13 +171,16 @@ input[id="menu-btn"]{
         transform: matrix(1, 1, -1, 1, 12, -10);
         -ms-transform: matrix(1, 1, -1, 1, 12, -10); /* IE 9 */
         -webkit-transform: matrix(1, 1, -1, 1, 12, -10);
-        transition: 0.25s;
-        -webkit-transition: 0.25s;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
     }
     &:checked ~ .menu-btn div:nth-child(2){
         opacity: 0;
-        transition: 0.25s;
-        -webkit-transition: 0.25s;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
+    }
+    &:checked ~ .cite-wraper .body-container #contactWithMe .contacts_section .contacts_line img{
+        margin: 20px 40px 20px 80px;
     }
 }
 .menu-photo_text-container{
@@ -332,7 +335,7 @@ input[id="menu-btn"]{
     border-bottom: 1px solid #e5e5e5;
 }
 .about-me{
-    display: inline-grid;
+    display: grid;
     grid-area: aboutme;
 
     grid-template-areas: "aboutMeText aboutMePhoto";
@@ -353,6 +356,7 @@ input[id="menu-btn"]{
         }
     }
     &_photo{
+        min-height: 100px;
         grid-area: aboutMePhoto;
         height: 100%;
         background: $dark-blue;
@@ -378,17 +382,17 @@ input[id="menu-btn"]{
         }
     }
 }
-.yellow-row{
-    max-width: 340px;
-    background: #f9f9f9;
-    line-height: 50px;
-    border-bottom: 1px solid #e0e0e0;
+// .yellow-row{
+//     max-width: 340px;
+//     background: #f9f9f9;
+//     line-height: 50px;
+//     border-bottom: 1px solid #e0e0e0;
 
-    font-family: $medium;
-    span{
-        font-family: $semibold;
-    }
-}
+//     font-family: $medium;
+//     span{
+//         font-family: $semibold;
+//     }
+// }
 .work-exp{
     grid-area: workexp;
 }
@@ -702,17 +706,38 @@ footer{
     opacity: 1;
     transition: all 0.5s;
 }
-
+@media screen and (max-width:1500px){
+    &:checked ~ .cite-wraper .body-container .skills{
+        grid-template-columns: 100%;
+        grid-template-areas: "heading"
+                            "section1"
+                            "section2"
+                            "section3"
+                            ;
+        justify-content: center;
+        justify-items: center;
+        transition: all 0.25s linear;
+        -webkit-transition: all 0.25s linear;
+        &_section1,
+        &_section2,
+        &_section3{
+            width: 90%;
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
 // Styles for mobile devices
 @media screen and (max-width:1200px){
     #login-window{
         width: 300px;
     }
-    .about-me{
-        grid-template-areas: "aboutMePhoto" 
-                             "aboutMeText";
-        grid-template-columns: 100%;
-        grid-template-rows: auto;
+    .about-me{        
+            grid-template-areas: "aboutMePhoto" 
+                                 "aboutMeText";
+            grid-template-columns: 100%;
+            grid-column-gap: 0;
     }    
     .right-cloud, .left-cloud{
         grid-template-areas: "checkpoint cloud";
@@ -722,6 +747,24 @@ footer{
     }
     .leftside-checkpoint{
         background: url(../images/right-cloud.png) top right no-repeat;
+    }
+    .skills{
+        grid-template-columns: 100%;
+        grid-template-areas: "heading"
+                             "section1"
+                             "section2"
+                             "section3"
+                             ;
+        justify-content: center;
+        justify-items: center;
+        &_section1,
+        &_section2,
+        &_section3{
+            width: 70%;
+            p{
+                text-align: center;
+            }
+        }
     }
     .contacts{
         display: grid;
@@ -770,6 +813,7 @@ footer{
 
         overflow: auto;
         
+        text-align: center;
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
 
@@ -819,9 +863,12 @@ footer{
                              "section2"
                              "section3"
                              ;
+        justify-content: center;
+        justify-items: stretch;
         &_section1,
         &_section2,
         &_section3{
+            width: 100%;
             p{
                 text-align: center;
             }

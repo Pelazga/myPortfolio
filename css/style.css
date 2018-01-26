@@ -107,19 +107,19 @@ input[id="menu-btn"] {
     -webkit-transition: all 0.25s linear; }
   input[id="menu-btn"]:checked ~ .cite-wraper .menu-container {
     width: 275px;
-    transition: 0.25s;
-    -webkit-transition: 0.25s; }
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear; }
   input[id="menu-btn"]:checked ~ .cite-wraper .body-container {
     width: auto;
-    transition: 0.25s;
-    -webkit-transition: 0.25s; }
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear; }
   input[id="menu-btn"]:checked ~ .menu-btn div:first-child {
     transform: matrix(1, -1, 1, 1, 12, 15);
     -ms-transform: matrix(1, -1, 1, 1, 12, 15);
     /* IE 9 */
     -webkit-transform: matrix(1, -1, 1, 1, 12, 15);
-    transition: 0.25s;
-    -webkit-transition: 0.25s;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
     width: 30px;
     height: 3px; }
   input[id="menu-btn"]:checked ~ .menu-btn div:last-child {
@@ -129,12 +129,14 @@ input[id="menu-btn"] {
     -ms-transform: matrix(1, 1, -1, 1, 12, -10);
     /* IE 9 */
     -webkit-transform: matrix(1, 1, -1, 1, 12, -10);
-    transition: 0.25s;
-    -webkit-transition: 0.25s; }
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear; }
   input[id="menu-btn"]:checked ~ .menu-btn div:nth-child(2) {
     opacity: 0;
-    transition: 0.25s;
-    -webkit-transition: 0.25s; }
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear; }
+  input[id="menu-btn"]:checked ~ .cite-wraper .body-container #contactWithMe .contacts_section .contacts_line img {
+    margin: 20px 40px 20px 80px; }
 
 .menu-photo_text-container {
   margin: -117px 0 15px 30px;
@@ -246,7 +248,7 @@ input[id="menu-btn"] {
   border-bottom: 1px solid #e5e5e5; }
 
 .about-me {
-  display: inline-grid;
+  display: grid;
   grid-area: aboutme;
   grid-template-areas: "aboutMeText aboutMePhoto";
   grid-template-columns: 1fr 1fr;
@@ -261,6 +263,7 @@ input[id="menu-btn"] {
       font-size: 14px;
       line-height: 26px; }
   .about-me_photo {
+    min-height: 100px;
     grid-area: aboutMePhoto;
     height: 100%;
     background: #353541; }
@@ -279,15 +282,6 @@ input[id="menu-btn"] {
       height: 4px;
       margin-top: 10px;
       background: #fb6470; }
-
-.yellow-row {
-  max-width: 340px;
-  background: #f9f9f9;
-  line-height: 50px;
-  border-bottom: 1px solid #e0e0e0;
-  font-family: "Raleway-Medium", Arial, Helvetica, sans-serif; }
-  .yellow-row span {
-    font-family: "Raleway-SemiBold", Arial, Helvetica, sans-serif; }
 
 .work-exp {
   grid-area: workexp; }
@@ -537,19 +531,41 @@ footer {
   opacity: 1;
   transition: all 0.5s; }
 
+@media screen and (max-width: 1500px) {
+  :checked ~ .cite-wraper .body-container .skills {
+    grid-template-columns: 100%;
+    grid-template-areas: "heading" "section1" "section2" "section3";
+    justify-content: center;
+    justify-items: center;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear; }
+    :checked ~ .cite-wraper .body-container .skills_section1, :checked ~ .cite-wraper .body-container .skills_section2, :checked ~ .cite-wraper .body-container .skills_section3 {
+      width: 90%; }
+      :checked ~ .cite-wraper .body-container .skills_section1 p, :checked ~ .cite-wraper .body-container .skills_section2 p, :checked ~ .cite-wraper .body-container .skills_section3 p {
+        text-align: center; } }
+
 @media screen and (max-width: 1200px) {
   #login-window {
     width: 300px; }
   .about-me {
     grid-template-areas: "aboutMePhoto"  "aboutMeText";
     grid-template-columns: 100%;
-    grid-template-rows: auto; }
+    grid-column-gap: 0; }
   .right-cloud, .left-cloud {
     grid-template-areas: "checkpoint cloud";
     grid-template-columns: 120px auto;
     margin-bottom: 20px; }
   .leftside-checkpoint {
     background: url(../images/right-cloud.png) top right no-repeat; }
+  .skills {
+    grid-template-columns: 100%;
+    grid-template-areas: "heading" "section1" "section2" "section3";
+    justify-content: center;
+    justify-items: center; }
+    .skills_section1, .skills_section2, .skills_section3 {
+      width: 70%; }
+      .skills_section1 p, .skills_section2 p, .skills_section3 p {
+        text-align: center; }
   .contacts {
     display: grid;
     grid-template-columns: 100%; }
@@ -587,6 +603,7 @@ footer {
     max-height: 100vh;
     height: 0px;
     overflow: auto;
+    text-align: center;
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear; }
     .cite-wraper .menu-container .menu-photo {
@@ -614,9 +631,13 @@ footer {
     padding: 30px; }
   .skills {
     grid-template-columns: 100%;
-    grid-template-areas: "heading" "section1" "section2" "section3"; }
-    .skills_section1 p, .skills_section2 p, .skills_section3 p {
-      text-align: center; }
+    grid-template-areas: "heading" "section1" "section2" "section3";
+    justify-content: center;
+    justify-items: stretch; }
+    .skills_section1, .skills_section2, .skills_section3 {
+      width: 100%; }
+      .skills_section1 p, .skills_section2 p, .skills_section3 p {
+        text-align: center; }
   #contat-form {
     display: grid;
     grid-template-columns: 100%;
