@@ -25,19 +25,19 @@ projectLink.onclick = function() {
     setTimeout(function() {
         projectLink.classList.add("active");
         projectGall.classList.add("gallery-section-active");
-    }, 250);
+    }, 220);
 };
 translationLink.onclick = function() {
     removeActivatingClass();
     setTimeout(function() {
         translationGall.classList.add("gallery-section-active");
         translationLink.classList.add("active");
-    }, 250);
+    }, 220);
 };
 textLink.onclick = function() {
     removeActivatingClass();
     setTimeout(function() {
         textGall.classList.add("gallery-section-active");
         textLink.classList.add("active");
-    }, 250);
+    }, 220);
 };
