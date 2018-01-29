@@ -74,7 +74,40 @@ closeLoginWindowBtn.onclick = function(){
 
 // для формы логина закончился
 
-// для всплывающего окошка начало
+// для мест работы начался
+var manzanaCheckpoint = document.getElementById("manzana-checkpoint");
+var manzanaCloseBtn = document.getElementById("manzana-close-btn");
+var stoneIndustryCheckpoint = document.getElementById("stone-industry-checkpoint");
+var stoneIndustryCloseBtn = document.getElementById("stone-industry-close-btn");
+var manzanaCheckpoint = document.getElementById("manzana-checkpoint");
+var manzanaCloseBtn = document.getElementById("manzana-close-btn");
+
+function checkpointClick (divWithInfo) {
+	document.getElementById(divWithInfo).classList.add("active-workplace-info");
+};
+function closeBtnClick (divWithInfo) {
+	document.getElementById(divWithInfo).classList.remove("active-workplace-info");
+};
+
+
+manzanaCheckpoint.onclick = function (){
+	checkpointClick("manzana-info");
+};
+manzanaCloseBtn.onclick = function (){
+	closeBtnClick("manzana-info");;
+};
+stoneIndustryCheckpoint.onclick = function (){
+	checkpointClick("stone-industry-info");
+};
+stoneIndustryCloseBtn.onclick = function (){
+	closeBtnClick("stone-industry-info");;
+};
+
+
+
+// для мест работы закончился
+
+// для всплывающего окошка c благодарностью о подписке начало
 var submitBtn = document.getElementById('send-massege-btn');
 var popUpWindow = document.getElementById('thanx-massege');
 
@@ -82,7 +115,7 @@ var popUpWindow = document.getElementById('thanx-massege');
 document.getElementById('thanx-massege-close-btn').onclick = function(){
   popUpWindow.classList.add('hidden')
 };
-// для всплывающего окошка закончился
+// для всплывающего окошка c благодарностью о подписке закончился
 
 // для отправки данных с формы начало
 $(document).ready(function() {
@@ -106,3 +139,69 @@ $(document).ready(function() {
   
 });
 // для отправки данных с формы закончился
+
+function throttle(func, ms) {
+
+  var isThrottled = false,
+    savedArgs,
+    savedThis;
+
+  function wrapper() {
+
+    if (isThrottled) { // (2)
+      savedArgs = arguments;
+      savedThis = this;
+      return;
+    }
+
+    func.apply(this, arguments); // (1)
+
+    isThrottled = true;
+
+    setTimeout(function() {
+      isThrottled = false; // (3)
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, ms);
+  }
+
+  return wrapper;
+}
+const SkillsSection1 = document.getElementById("skills_section1");
+const SkillBars = document.querySelectorAll(".skill-bar");
+function moveProgressBar(id, skillClass) {
+	var elementById = document.getElementById(id);
+	var MoveProgresAt = (window.scrollY + window.innerHeight) - elementById.clientHeight;
+	var SectionBottom = elementById.offsetTop + elementById.clientHeight;
+	if (MoveProgresAt > SectionBottom){
+		elementById.classList.add(skillClass);
+	}
+}
+function move1StSectionProgressBars () {
+	moveProgressBar("html-skill", "html");
+	moveProgressBar("css-skill", "css");
+	moveProgressBar("scss-skill", "scss");
+}
+function move2ndSectionProgressBars () {
+
+}
+function move3dSectionProgressBars () {
+
+	moveProgressBar("english-skill", "english");
+	moveProgressBar("photoshop-skill", "photoshop");
+}
+	
+window.addEventListener('scroll', move1StSectionProgressBars);
+window.addEventListener('scroll', move2ndSectionProgressBars);
+window.addEventListener('scroll', move3dSectionProgressBars);
+
+// (window.scrollY + window.innerHeight) - document.getElementById("html-skill").clientHeight
+// document.getElementById("html-skill").offsetTop + document.getElementById("html-skill").clientHeight;
+
+
+// var skillsSection1 = document.getElementById('skills_section1');
+// var skillsSection1Bottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
+
+// window.scrollY + window.innerHeight > skillsSection1Bottom

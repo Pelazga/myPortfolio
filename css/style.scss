@@ -50,6 +50,21 @@ $semibold: 'Raleway-SemiBold', Arial, Helvetica, sans-serif;
 $medium: 'Raleway-Medium', Arial, Helvetica, sans-serif;
 $mediumitalic: 'Raleway-MediumItalic', Arial, Helvetica, sans-serif;
 
+@keyframes box-shadow {
+    0% {
+        background: $red;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+    }
+    50% {
+        background: #fa8f98;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
+    }    
+    100% {
+        background: $red;
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); 
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -59,6 +74,10 @@ $mediumitalic: 'Raleway-MediumItalic', Arial, Helvetica, sans-serif;
 }
 a{
     text-decoration: none;
+    &:visited{
+        color: white;
+        opacity: 0.8;
+    }
 }
 
 
@@ -382,17 +401,6 @@ input[id="menu-btn"]{
         }
     }
 }
-// .yellow-row{
-//     max-width: 340px;
-//     background: #f9f9f9;
-//     line-height: 50px;
-//     border-bottom: 1px solid #e0e0e0;
-
-//     font-family: $medium;
-//     span{
-//         font-family: $semibold;
-//     }
-// }
 .work-exp{
     grid-area: workexp;
 }
@@ -426,7 +434,7 @@ input[id="menu-btn"]{
     border: 1px solid black;
     border-radius: 50%;
     background: #f9f9f9;
-    div{
+    .marker{
         margin: 10px; 
         width: 18px;
         height: 18px;
@@ -434,13 +442,91 @@ input[id="menu-btn"]{
         border: 1px solid black;
         border-radius: 50%;
         background: $red;
+        
+        cursor: pointer;
     }
 }
-.line{
+.available-info    {
+    animation-name: box-shadow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+    .line{
     margin: 0 auto;
     width: 1px;
     height: 100%;
     background: black;
+}
+.workplace-info{
+    display: grid;
+    grid-template-areas:"none close"
+                        "position company-logo"
+                        "work-period company-name"
+                        "duties duties"
+                        ;
+    position: fixed;
+    top: 30%;
+    left: 20%;
+    width: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    background: $dark-blue;
+    .close-wrap{
+        grid-area:close;
+        justify-self: end;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+    .company-logo{
+        grid-area: company-logo;
+        height: 40px;
+        justify-self: end;
+        img{
+            height: 100%;
+        }
+    }
+    .company-name{
+        grid-area: company-name;
+        justify-self: end;
+        padding: 5px;
+        a{
+            font-family: $mediumitalic;
+            font-size: 28px;
+            color: white;
+            text-decoration: underline;
+        }
+    }
+    .position{
+        grid-area: position;
+        font-family: $semibold;
+        font-size: 30px;
+        color: $red;
+    }
+    .work-period{
+        grid-area: work-period;
+        align-self: center;
+        padding: 5px 0;
+        font-family: $semibold;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: white;
+        opacity: 0.8;
+    }
+    .duties{
+        grid-area: duties;
+        padding: 20px;
+        font-family: $medium;
+        font-size: 28px;
+        color: white;
+        ul li{
+            padding: 5px;
+        }
+    }
+}
+.active-workplace-info{
+    width: 60%;
+    border: 1px solid black;
+    padding: 20px;
 }
 .work-place-cloud{
     grid-area: cloud;
@@ -452,10 +538,8 @@ input[id="menu-btn"]{
     p{
         margin: 10px 0;
     }
-    .position, .duties{
-        color: white;
-    }
     .position{
+        color: white;
         font-family: $semibold;
         font-size: 16px;
     }
@@ -471,6 +555,9 @@ input[id="menu-btn"]{
     .work-period{
         color: $red;
         text-transform: uppercase;
+    }
+    .duties{
+        color: white;
     }
 }
 
@@ -525,6 +612,7 @@ input[id="menu-btn"]{
     .filling{
         height: 100%;
         background: $red;
+        width: 1%;
         .dot{
             position: relative;
             left: 100%;
@@ -540,21 +628,32 @@ input[id="menu-btn"]{
         }
         &.html {
             width: 90%;
+            transition: all 2s;
+            -webkit-transition: all 2s;
         }
         &.css{
             width: 90%;
+            transition: all 2s;
+            -webkit-transition: all 2s;
         }
         &.scss{
             width: 90%;
+            transition: all 2s;
+            -webkit-transition: all 2s;
         }
         &.javascript{
             width: 60%;
+            transition: all 2s;
+            -webkit-transition: all 2s;
         }
         &.english{
             width: 80%;
+            transition: all 2s;
+            -webkit-transition: all 2s;
         }
         &.photoshop{
-            width: 50%;
+            width: 50%;    transition: all 2s;
+            -webkit-transition: all 2s;
         }
 
     }
@@ -733,12 +832,26 @@ footer{
     #login-window{
         width: 300px;
     }
+    .close-btn{
+        width: 24px;
+        height: 24px;
+        padding-top: 11px;
+        div{
+            width: 22px;
+        }
+    }
     .about-me{        
             grid-template-areas: "aboutMePhoto" 
                                  "aboutMeText";
             grid-template-columns: 100%;
             grid-column-gap: 0;
-    }    
+    }
+    .workplace-info{
+        .close-wrap{
+            padding-right: 23px;
+            padding-bottom: 10px;
+        }
+    } 
     .right-cloud, .left-cloud{
         grid-template-areas: "checkpoint cloud";
         grid-template-columns: 120px auto;
@@ -845,8 +958,43 @@ footer{
     .section{
         margin: 0 10px;
     }
-    .checkpoint{
-        display: none;
+    .rightside-checkpoint, .leftside-checkpoint{
+        background: none;
+        position: relative;
+        right: 50px;
+        bottom: 100px;
+    }
+    .right-cloud, .left-cloud{
+        grid-template-areas: "cloud checkpoint";
+        grid-template-columns: 100% 40px;   
+        grid-template-rows: auto 0px;
+    }
+    .workplace-info{
+        grid-template-areas:"close"
+                            "company-logo"
+                            "company-name"
+                            "position"
+                            "work-period"
+                            "duties"
+                            ;
+        max-height: 90vh;
+        top: 10%;
+        left: 0;
+        width: 0;
+        border-radius: 0;
+        overflow: auto;
+        justify-items: center;
+        z-index: 99;
+        .close-wrap{
+            padding-right: 23px;
+            padding-bottom: 0px;
+        }
+        .company-logo, .company-name{
+            justify-self: center;
+        }
+    }
+    .active-workplace-info{
+        width: 100%;
     }
     .right-cloud, .left-cloud{
         grid-template-areas: "cloud";

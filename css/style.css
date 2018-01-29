@@ -26,6 +26,17 @@
   font-weight: normal;
   font-style: normal; }
 
+@keyframes box-shadow {
+  0% {
+    background: #fb6470;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); }
+  50% {
+    background: #fa8f98;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
+  100% {
+    background: #fb6470;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); } }
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +46,9 @@
 
 a {
   text-decoration: none; }
+  a:visited {
+    color: white;
+    opacity: 0.8; }
 
 .up-button {
   display: block;
@@ -313,19 +327,83 @@ input[id="menu-btn"] {
   border: 1px solid black;
   border-radius: 50%;
   background: #f9f9f9; }
-  .checkpoint div {
+  .checkpoint .marker {
     margin: 10px;
     width: 18px;
     height: 18px;
     border: 1px solid black;
     border-radius: 50%;
-    background: #fb6470; }
+    background: #fb6470;
+    cursor: pointer; }
+
+.available-info {
+  animation-name: box-shadow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite; }
 
 .line {
   margin: 0 auto;
   width: 1px;
   height: 100%;
   background: black; }
+
+.workplace-info {
+  display: grid;
+  grid-template-areas: "none close" "position company-logo" "work-period company-name" "duties duties";
+  position: fixed;
+  top: 30%;
+  left: 20%;
+  width: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #353541; }
+  .workplace-info .close-wrap {
+    grid-area: close;
+    justify-self: end;
+    padding-right: 10px;
+    padding-bottom: 10px; }
+  .workplace-info .company-logo {
+    grid-area: company-logo;
+    height: 40px;
+    justify-self: end; }
+    .workplace-info .company-logo img {
+      height: 100%; }
+  .workplace-info .company-name {
+    grid-area: company-name;
+    justify-self: end;
+    padding: 5px; }
+    .workplace-info .company-name a {
+      font-family: "Raleway-MediumItalic", Arial, Helvetica, sans-serif;
+      font-size: 28px;
+      color: white;
+      text-decoration: underline; }
+  .workplace-info .position {
+    grid-area: position;
+    font-family: "Raleway-SemiBold", Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #fb6470; }
+  .workplace-info .work-period {
+    grid-area: work-period;
+    align-self: center;
+    padding: 5px 0;
+    font-family: "Raleway-SemiBold", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.8; }
+  .workplace-info .duties {
+    grid-area: duties;
+    padding: 20px;
+    font-family: "Raleway-Medium", Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    color: white; }
+    .workplace-info .duties ul li {
+      padding: 5px; }
+
+.active-workplace-info {
+  width: 60%;
+  border: 1px solid black;
+  padding: 20px; }
 
 .work-place-cloud {
   grid-area: cloud;
@@ -335,9 +413,8 @@ input[id="menu-btn"] {
   background: #353541; }
   .work-place-cloud p {
     margin: 10px 0; }
-  .work-place-cloud .position, .work-place-cloud .duties {
-    color: white; }
   .work-place-cloud .position {
+    color: white;
     font-family: "Raleway-SemiBold", Arial, Helvetica, sans-serif;
     font-size: 16px; }
   .work-place-cloud .company {
@@ -349,6 +426,8 @@ input[id="menu-btn"] {
   .work-place-cloud .work-period {
     color: #fb6470;
     text-transform: uppercase; }
+  .work-place-cloud .duties {
+    color: white; }
 
 .education {
   grid-area: education; }
@@ -386,7 +465,8 @@ input[id="menu-btn"] {
   background: rgba(255, 255, 255, 0.7); }
   .progress .filling {
     height: 100%;
-    background: #fb6470; }
+    background: #fb6470;
+    width: 1%; }
     .progress .filling .dot {
       position: relative;
       left: 100%;
@@ -397,17 +477,29 @@ input[id="menu-btn"] {
       margin-right: -9px;
       background: #fb6470; }
     .progress .filling.html {
-      width: 90%; }
+      width: 90%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
     .progress .filling.css {
-      width: 90%; }
+      width: 90%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
     .progress .filling.scss {
-      width: 90%; }
+      width: 90%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
     .progress .filling.javascript {
-      width: 60%; }
+      width: 60%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
     .progress .filling.english {
-      width: 80%; }
+      width: 80%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
     .progress .filling.photoshop {
-      width: 50%; }
+      width: 50%;
+      transition: all 2s;
+      -webkit-transition: all 2s; }
 
 .percantage {
   display: inline-block;
@@ -547,10 +639,19 @@ footer {
 @media screen and (max-width: 1200px) {
   #login-window {
     width: 300px; }
+  .close-btn {
+    width: 24px;
+    height: 24px;
+    padding-top: 11px; }
+    .close-btn div {
+      width: 22px; }
   .about-me {
     grid-template-areas: "aboutMePhoto"  "aboutMeText";
     grid-template-columns: 100%;
     grid-column-gap: 0; }
+  .workplace-info .close-wrap {
+    padding-right: 23px;
+    padding-bottom: 10px; }
   .right-cloud, .left-cloud {
     grid-template-areas: "checkpoint cloud";
     grid-template-columns: 120px auto;
@@ -621,8 +722,32 @@ footer {
     font-size: 18px; }
   .section {
     margin: 0 10px; }
-  .checkpoint {
-    display: none; }
+  .rightside-checkpoint, .leftside-checkpoint {
+    background: none;
+    position: relative;
+    right: 50px;
+    bottom: 100px; }
+  .right-cloud, .left-cloud {
+    grid-template-areas: "cloud checkpoint";
+    grid-template-columns: 100% 40px;
+    grid-template-rows: auto 0px; }
+  .workplace-info {
+    grid-template-areas: "close" "company-logo" "company-name" "position" "work-period" "duties";
+    max-height: 90vh;
+    top: 10%;
+    left: 0;
+    width: 0;
+    border-radius: 0;
+    overflow: auto;
+    justify-items: center;
+    z-index: 99; }
+    .workplace-info .close-wrap {
+      padding-right: 23px;
+      padding-bottom: 0px; }
+    .workplace-info .company-logo, .workplace-info .company-name {
+      justify-self: center; }
+  .active-workplace-info {
+    width: 100%; }
   .right-cloud, .left-cloud {
     grid-template-areas: "cloud";
     grid-template-columns: 100%; }
