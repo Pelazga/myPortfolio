@@ -442,14 +442,13 @@ input[id="menu-btn"]{
         border: 1px solid black;
         border-radius: 50%;
         background: $red;
-        
-        cursor: pointer;
     }
 }
 .available-info    {
     animation-name: box-shadow;
     animation-duration: 1s;
     animation-iteration-count: infinite;
+    cursor: pointer;
 }
     .line{
     margin: 0 auto;
@@ -999,6 +998,9 @@ footer{
     .right-cloud, .left-cloud{
         grid-template-areas: "cloud";
         grid-template-columns: 100%;
+    }
+    .work-place-cloud{
+        padding-right: 50px;
     }
     #mySkills{
         margin: 0px;

@@ -1,6 +1,32 @@
-//для открытия и закрытия меню
+function throttle(func, ms) {
 
-//для открытия и закрытия меню закончился
+	var isThrottled = false,
+	  savedArgs,
+	  savedThis;
+  
+	function wrapper() {
+  
+	  if (isThrottled) { // (2)
+		savedArgs = arguments;
+		savedThis = this;
+		return;	
+	  }
+  
+	  func.apply(this, arguments); // (1)
+  
+	  isThrottled = true;
+  
+	  setTimeout(function() {
+		isThrottled = false; // (3)
+		if (savedArgs) {
+		  wrapper.apply(savedThis, savedArgs);
+		  savedArgs = savedThis = null;
+		}
+	  }, ms);
+	}
+  
+	return wrapper;
+  }
 
 // для кнопки вверх начало
 var banner = document.getElementById('home');
@@ -140,35 +166,8 @@ $(document).ready(function() {
 });
 // для отправки данных с формы закончился
 
-function throttle(func, ms) {
 
-  var isThrottled = false,
-    savedArgs,
-    savedThis;
-
-  function wrapper() {
-
-    if (isThrottled) { // (2)
-      savedArgs = arguments;
-      savedThis = this;
-      return;
-    }
-
-    func.apply(this, arguments); // (1)
-
-    isThrottled = true;
-
-    setTimeout(function() {
-      isThrottled = false; // (3)
-      if (savedArgs) {
-        wrapper.apply(savedThis, savedArgs);
-        savedArgs = savedThis = null;
-      }
-    }, ms);
-  }
-
-  return wrapper;
-}
+//для плавного заполнения прогрессбаров начало
 const SkillsSection1 = document.getElementById("skills_section1");
 const SkillBars = document.querySelectorAll(".skill-bar");
 function moveProgressBar(id, skillClass) {
@@ -180,28 +179,20 @@ function moveProgressBar(id, skillClass) {
 	}
 }
 function move1StSectionProgressBars () {
-	moveProgressBar("html-skill", "html");
-	moveProgressBar("css-skill", "css");
-	moveProgressBar("scss-skill", "scss");
+		moveProgressBar("html-skill", "html");
+		moveProgressBar("css-skill", "css");
+		moveProgressBar("scss-skill", "scss");
+ 
 }
 function move2ndSectionProgressBars () {
 
 }
 function move3dSectionProgressBars () {
-
-	moveProgressBar("english-skill", "english");
-	moveProgressBar("photoshop-skill", "photoshop");
+		moveProgressBar("english-skill", "english");
+		moveProgressBar("photoshop-skill", "photoshop");
 }
 	
-window.addEventListener('scroll', move1StSectionProgressBars);
-window.addEventListener('scroll', move2ndSectionProgressBars);
-window.addEventListener('scroll', move3dSectionProgressBars);
-
-// (window.scrollY + window.innerHeight) - document.getElementById("html-skill").clientHeight
-// document.getElementById("html-skill").offsetTop + document.getElementById("html-skill").clientHeight;
-
-
-// var skillsSection1 = document.getElementById('skills_section1');
-// var skillsSection1Bottom = avatarElem.getBoundingClientRect().bottom + window.pageYOffset;
-
-// window.scrollY + window.innerHeight > skillsSection1Bottom
+window.addEventListener('scroll', throttle(move1StSectionProgressBars, 100));
+window.addEventListener('scroll', throttle(move2ndSectionProgressBars, 100));
+window.addEventListener('scroll', throttle(move3dSectionProgressBars, 100));
+//для плавного заполнения прогрессбаров конец
