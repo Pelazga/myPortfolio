@@ -179,17 +179,17 @@ function moveProgressBar(id, skillClass) {
 	}
 }
 function move1StSectionProgressBars () {
-		moveProgressBar("html-skill", "html");
-		moveProgressBar("css-skill", "css");
-		moveProgressBar("scss-skill", "scss");
+	moveProgressBar("html-skill", "html");
+	moveProgressBar("css-skill", "css");
+	moveProgressBar("scss-skill", "scss");
  
 }
 function move2ndSectionProgressBars () {
-
+	moveProgressBar("javascript-skill", "javascript");
 }
 function move3dSectionProgressBars () {
-		moveProgressBar("english-skill", "english");
-		moveProgressBar("photoshop-skill", "photoshop");
+	moveProgressBar("english-skill", "english");
+	moveProgressBar("photoshop-skill", "photoshop");
 }
 	
 window.addEventListener('scroll', throttle(move1StSectionProgressBars, 100));

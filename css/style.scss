@@ -55,13 +55,21 @@ $mediumitalic: 'Raleway-MediumItalic', Arial, Helvetica, sans-serif;
         background: $red;
         box-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
     }
-    50% {
+    100% {
         background: #fa8f98;
         box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); 
-    }    
+    }
+}
+@keyframes  skaleup {
+    0% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
     100% {
-        background: $red;
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); 
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
     }
 }
 
@@ -418,6 +426,7 @@ input[id="menu-btn"]{
 
 .leftside-checkpoint, .rightside-checkpoint{
     grid-area: checkpoint;
+    z-index: 0;
 }
 .rightside-checkpoint{
     background: url(../images/right-cloud.png) top right no-repeat;
@@ -444,11 +453,18 @@ input[id="menu-btn"]{
         background: $red;
     }
 }
-.available-info    {
-    animation-name: box-shadow;
+.available-info{
+    animation-name: skaleup;
     animation-duration: 1s;
+    animation-direction: alternate;
     animation-iteration-count: infinite;
     cursor: pointer;
+    .marker{
+        animation-name: box-shadow;
+        animation-duration: 1s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
 }
     .line{
     margin: 0 auto;
@@ -470,6 +486,7 @@ input[id="menu-btn"]{
     overflow: hidden;
     border-radius: 10px;
     background: $dark-blue;
+    z-index: 50;
     .close-wrap{
         grid-area:close;
         justify-self: end;
@@ -962,6 +979,9 @@ footer{
         position: relative;
         right: 50px;
         bottom: 100px;
+        .line{
+            display: none;
+        }
     }
     .right-cloud, .left-cloud{
         grid-template-areas: "cloud checkpoint";

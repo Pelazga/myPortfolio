@@ -30,12 +30,19 @@
   0% {
     background: #fb6470;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); }
-  50% {
-    background: #fa8f98;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); }
   100% {
-    background: #fb6470;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.9); } }
+    background: #fa8f98;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); } }
+
+@keyframes skaleup {
+  0% {
+    -ms-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1); }
+  100% {
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1); } }
 
 * {
   margin: 0;
@@ -312,7 +319,8 @@ input[id="menu-btn"] {
   grid-template-columns: 45% 10% auto; }
 
 .leftside-checkpoint, .rightside-checkpoint {
-  grid-area: checkpoint; }
+  grid-area: checkpoint;
+  z-index: 0; }
 
 .rightside-checkpoint {
   background: url(../images/right-cloud.png) top right no-repeat; }
@@ -336,10 +344,16 @@ input[id="menu-btn"] {
     background: #fb6470; }
 
 .available-info {
-  animation-name: box-shadow;
+  animation-name: skaleup;
   animation-duration: 1s;
+  animation-direction: alternate;
   animation-iteration-count: infinite;
   cursor: pointer; }
+  .available-info .marker {
+    animation-name: box-shadow;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; }
 
 .line {
   margin: 0 auto;
@@ -356,7 +370,8 @@ input[id="menu-btn"] {
   width: 0;
   overflow: hidden;
   border-radius: 10px;
-  background: #353541; }
+  background: #353541;
+  z-index: 50; }
   .workplace-info .close-wrap {
     grid-area: close;
     justify-self: end;
@@ -727,6 +742,8 @@ footer {
     position: relative;
     right: 50px;
     bottom: 100px; }
+    .rightside-checkpoint .line, .leftside-checkpoint .line {
+      display: none; }
   .right-cloud, .left-cloud {
     grid-template-areas: "cloud checkpoint";
     grid-template-columns: 100% 40px;
