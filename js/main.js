@@ -132,7 +132,11 @@ for (index = 0; index < closeBtns.length; index++) {
 	closeBtn = closeBtns[index];
 	closeBtn.addEventListener('click', closeInfoWind);
 };
-
+document.onkeydown = function (event){
+	event= event||window.event;
+	if (event.keyCode == 27)
+	closeOpenedWindows();
+};
 function closeInfoWind(event) {
 	closeOpenedWindows();
 };
