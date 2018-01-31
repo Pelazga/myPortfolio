@@ -62,14 +62,14 @@ $mediumitalic: 'Raleway-MediumItalic', Arial, Helvetica, sans-serif;
 }
 @keyframes  skaleup {
     0% {
-        -ms-transform: scale(1.1, 1.1);
-        -webkit-transform: scale(1.1, 1.1);
-        transform: scale(1.1, 1.1);
-    }
-    100% {
         -ms-transform: scale(1, 1);
         -webkit-transform: scale(1, 1);
         transform: scale(1, 1);
+    }
+    100% {
+        -ms-transform: scale(0.9, 0.9);
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
     }
 }
 
@@ -483,10 +483,14 @@ input[id="menu-btn"]{
     top: 30%;
     left: 20%;
     width: 0;
+    height: 0;
     overflow: hidden;
     border-radius: 10px;
     background: $dark-blue;
     z-index: 50;
+    opacity: 0;
+    transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
     .close-wrap{
         grid-area:close;
         justify-self: end;
@@ -541,8 +545,12 @@ input[id="menu-btn"]{
 }
 .active-workplace-info{
     width: 60%;
+    height: auto;
     border: 1px solid black;
     padding: 20px;
+    opacity: 1;
+    transition: opacity 0.25s linear;
+    -webkit-transition: opacity 0.25s linear;
 }
 .work-place-cloud{
     grid-area: cloud;

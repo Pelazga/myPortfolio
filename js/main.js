@@ -112,11 +112,11 @@ for (index = 0; index < checkpoints.length; index++) {
 function openInfoWind(event) {
 	var checkpointId = this.id; //manzana-checkpoint
 	infoWindowId = checkpointId + "-info";
-	closeOpenWindows();
+	closeOpenedWindows();
 	document.getElementById(infoWindowId).classList.add("active-workplace-info");
 };
 
-function closeOpenWindows() {
+function closeOpenedWindows() {
 	var workplaceInfoWind = document.querySelectorAll(".workplace-info");
 	for (i=0; i<workplaceInfoWind.length; i++){
 		if (workplaceInfoWind[i].classList.contains("active-workplace-info")){
@@ -134,7 +134,7 @@ for (index = 0; index < closeBtns.length; index++) {
 };
 
 function closeInfoWind(event) {
-	closeOpenWindows();
+	closeOpenedWindows();
 };
 
 // для мест работы закончился
