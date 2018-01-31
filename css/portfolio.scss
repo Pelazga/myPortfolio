@@ -19,23 +19,31 @@ $medium: 'Raleway-Medium', Arial, Helvetica, sans-serif;
 .gallery-section{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px,360px));
-    height: 0;
+    max-height: 0;
     opacity: 0;
     overflow: hidden;
-    align-content: stretch;
+    align-content: start;
     justify-content: space-around;
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
     .project-wrapper{
+        max-height: 173px;
+        max-width: 360px;
         margin: 10px;
-        background: #353541;
+        line-height: 0;
+        overflow: hidden;
         img{
             width: 100%;
             height: auto;
         }
+        &:hover .project-desc{
+            // top: -184px;
+            transition: all 0.25s linear;
+            -webkit-transition: all 0.25s linear;
+        }
     }
     &-active{
-        height: 100%;
+        max-height: 100%;
         opacity: 1;
         overflow: hidden;
         transition: all 0.25s linear;
@@ -43,17 +51,25 @@ $medium: 'Raleway-Medium', Arial, Helvetica, sans-serif;
     }
 }
 .project-desc{
+    position: relative;
+    bottom: 184px;
+    z-index: 10;
+    height: 184px;
+    width: 100%;
+    overflow: hidden;
     padding: 15px;
-    color: white;
+    background: rgba(53, 53, 65, 0.6);
     font-family: $medium;
-}
-.project-name{
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-.project-stack{
-    font-size: 16px;
-    margin-bottom: 20px;
+    line-height: normal;
+    color: white;
+    .project-name{
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .project-stack{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
 }
 .project-link{
     display: grid;

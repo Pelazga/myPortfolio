@@ -101,35 +101,41 @@ closeLoginWindowBtn.onclick = function(){
 // для формы логина закончился
 
 // для мест работы начался
-var manzanaCheckpoint = document.getElementById("manzana-checkpoint");
-var manzanaCloseBtn = document.getElementById("manzana-close-btn");
-var stoneIndustryCheckpoint = document.getElementById("stone-industry-checkpoint");
-var stoneIndustryCloseBtn = document.getElementById("stone-industry-close-btn");
-var manzanaCheckpoint = document.getElementById("manzana-checkpoint");
-var manzanaCloseBtn = document.getElementById("manzana-close-btn");
+var checkpoints = document.querySelectorAll('.checkpoint'),
+		index, checkpoint, infoWindowId;
 
-function checkpointClick (divWithInfo) {
-	document.getElementById(divWithInfo).classList.add("active-workplace-info");
-};
-function closeBtnClick (divWithInfo) {
-	document.getElementById(divWithInfo).classList.remove("active-workplace-info");
+for (index = 0; index < checkpoints.length; index++) {
+	checkpoint = checkpoints[index];
+	checkpoint.addEventListener('click', openInfoWind);
 };
 
-
-manzanaCheckpoint.onclick = function (){
-	checkpointClick("manzana-info");
-};
-manzanaCloseBtn.onclick = function (){
-	closeBtnClick("manzana-info");;
-};
-stoneIndustryCheckpoint.onclick = function (){
-	checkpointClick("stone-industry-info");
-};
-stoneIndustryCloseBtn.onclick = function (){
-	closeBtnClick("stone-industry-info");;
+function openInfoWind(event) {
+	var checkpointId = this.id; //manzana-checkpoint
+	infoWindowId = checkpointId + "-info";
+	closeOpenWindows();
+	document.getElementById(infoWindowId).classList.add("active-workplace-info");
 };
 
+function closeOpenWindows() {
+	var workplaceInfoWind = document.querySelectorAll(".workplace-info");
+	for (i=0; i<workplaceInfoWind.length; i++){
+		if (workplaceInfoWind[i].classList.contains("active-workplace-info")){
+			workplaceInfoWind[i].classList.remove("active-workplace-info");
+		}
+	}
+};
 
+var closeBtns = document.querySelectorAll('.workplace-info .close-wrap'),
+		closeBtn;
+
+for (index = 0; index < closeBtns.length; index++) {
+	closeBtn = closeBtns[index];
+	closeBtn.addEventListener('click', closeInfoWind);
+};
+
+function closeInfoWind(event) {
+	closeOpenWindows();
+};
 
 // для мест работы закончился
 
@@ -178,21 +184,19 @@ function moveProgressBar(id, skillClass) {
 		elementById.classList.add(skillClass);
 	}
 }
-function move1StSectionProgressBars () {
+function moveProgressBars () {
+	// first section
 	moveProgressBar("html-skill", "html");
 	moveProgressBar("css-skill", "css");
 	moveProgressBar("scss-skill", "scss");
- 
-}
-function move2ndSectionProgressBars () {
+
+	//2-nd section
 	moveProgressBar("javascript-skill", "javascript");
-}
-function move3dSectionProgressBars () {
+
+	//3-d section
 	moveProgressBar("english-skill", "english");
 	moveProgressBar("photoshop-skill", "photoshop");
 }
 	
-window.addEventListener('scroll', throttle(move1StSectionProgressBars, 100));
-window.addEventListener('scroll', throttle(move2ndSectionProgressBars, 100));
-window.addEventListener('scroll', throttle(move3dSectionProgressBars, 100));
+window.addEventListener('scroll', throttle(moveProgressBars, 100));
 //для плавного заполнения прогрессбаров конец
