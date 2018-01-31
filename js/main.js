@@ -42,9 +42,9 @@ window.onscroll = function() {
     upButton.classList.add('up-button-hidden');
   }
 };
-// для кнопки вверх закончился
+// для кнопки вверх конец
 
-// для формы логина
+// для формы логина начало
 var users = {
 	user1: {
 		pass: 'pass1'
@@ -98,9 +98,9 @@ closeLoginWindowBtn.onclick = function(){
 	loginWindow.classList.add('hidden');
 };
 
-// для формы логина закончился
+// для формы логина конец
 
-// для мест работы начался
+// для мест работы начало
 var checkpoints = document.querySelectorAll('.checkpoint'),
 		index, checkpoint, infoWindowId;
 
@@ -110,7 +110,7 @@ for (index = 0; index < checkpoints.length; index++) {
 };
 
 function openInfoWind(event) {
-	var checkpointId = this.id; //manzana-checkpoint
+	var checkpointId = this.id;
 	infoWindowId = checkpointId + "-info";
 	closeOpenedWindows();
 	document.getElementById(infoWindowId).classList.add("active-workplace-info");
@@ -140,7 +140,7 @@ function closeInfoWind(event) {
 	closeOpenedWindows();
 };
 
-// для мест работы закончился
+// для мест работы конец
 
 // для всплывающего окошка c благодарностью о подписке начало
 var submitBtn = document.getElementById('send-massege-btn');
@@ -150,7 +150,7 @@ var popUpWindow = document.getElementById('thanx-massege');
 document.getElementById('thanx-massege-close-btn').onclick = function(){
   popUpWindow.classList.add('hidden')
 };
-// для всплывающего окошка c благодарностью о подписке закончился
+// для всплывающего окошка c благодарностью о подписке конец
 
 // для отправки данных с формы начало
 $(document).ready(function() {
@@ -173,8 +173,7 @@ $(document).ready(function() {
 	});
   
 });
-// для отправки данных с формы закончился
-
+// для отправки данных с формы конец
 
 //для плавного заполнения прогрессбаров начало
 const SkillsSection1 = document.getElementById("skills_section1");
