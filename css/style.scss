@@ -92,23 +92,22 @@ a{
 .up-button{
     display: block;
     position: fixed;
-    z-index: 2;
     bottom: 20px;
     right: 20px;
-    
-    width: 50px;
+    z-index: 2;
+
     height: 33px;
+    width: 50px;
 
     transition: all 0.5s;
     &-hidden{
         right: -45px;
-    
         transition: all 0.5s;
     }
     div{
-        margin: 0 auto;
-        width: 0;
         height: 0;
+        width: 0;
+        margin: 0 auto;
 
         border-top: 0px solid rgba(255, 255, 255, 0);
         border-right: 20px solid rgba(255, 255, 255, 0);;
@@ -119,16 +118,16 @@ a{
 .cite-wraper{
     width: 100%;
     height: 100%;
+
     display: grid;
     grid-template-areas: "menu cite";
     justify-items: stretch;
 }
 .menu-btn{
     position: fixed;
-    z-index: 2;
     top: 20px;
     left: 20px;
-
+    z-index: 2;
     height: 33px;
     width: 50px;
 
@@ -141,6 +140,7 @@ a{
 
         margin-bottom:9px; 
         background: $red;
+
         transition: 0.25s;
         -webkit-transition: 0.25s;
     }
@@ -150,7 +150,7 @@ a{
     position: fixed;
     height: 100vh;
     width: 0px;
-    
+
     align-self: start;
     overflow: hidden;
     background: $dark-blue;
@@ -184,25 +184,30 @@ input[id="menu-btn"]{
         -webkit-transition: all 0.25s linear;
     }
     &:checked ~ .menu-btn div:first-child{
+        height: 3px;
+        width: 30px;
+
         transform: matrix(1, -1, 1, 1, 12, 15);
         -ms-transform: matrix(1, -1, 1, 1, 12, 15); /* IE 9 */
         -webkit-transform: matrix(1, -1, 1, 1, 12, 15);
+       
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
-        width: 30px;
-        height: 3px;
     }
     &:checked ~ .menu-btn div:last-child{
         width: 30px;
         height: 3px;
+
         transform: matrix(1, 1, -1, 1, 12, -10);
         -ms-transform: matrix(1, 1, -1, 1, 12, -10); /* IE 9 */
         -webkit-transform: matrix(1, 1, -1, 1, 12, -10);
+
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
     }
     &:checked ~ .menu-btn div:nth-child(2){
         opacity: 0;
+
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
     }
@@ -213,7 +218,6 @@ input[id="menu-btn"]{
 .menu-photo_text-container{
     margin: -117px 0 15px $menu-left-padding;
     overflow: hidden;
-
     h1{
         font-size: 32px;
     }
@@ -232,9 +236,9 @@ input[id="menu-btn"]{
     border-top: 1px solid #30303c;
     border-bottom: 1px solid #282835;
 
-    line-height:$menu-item-height;
-    color: white;
     font-size: 22px;
+    color: white;
+    line-height:$menu-item-height;
 
     &:hover{
         color: #a0a0a0;
@@ -245,9 +249,9 @@ input[id="menu-btn"]{
 }
 #login-window{
     position: fixed;
-    z-index: 999;
     top: 20%;
     right: 25%;
+    z-index: 999;
     
     width: 50%;
 
@@ -262,15 +266,15 @@ input[id="menu-btn"]{
     -webkit-transition: all 0.25s linear;
     
     input{
+        margin-bottom: 10px;
         border: 1px solid black;
         padding: 10px 20px;
-        margin-bottom: 10px;
     }
     button{
+        border: none;
         padding: 10px 20px;
         background: $red;
         color: white;
-        border: none;
     }
 }
 #login-form{
@@ -301,6 +305,7 @@ input[id="menu-btn"]{
 }
 .body-oppened-menu{
     padding-left: $menu-width;
+
     transition: all 0.25s;
     -webkit-transition: all 0.25s;
 }
@@ -310,7 +315,6 @@ input[id="menu-btn"]{
 
     height: 436px;
     background: url(../images/banner-bg2.jpg) center/cover no-repeat;
-
     align-items: center;
     justify-items: center;
     &_text{
@@ -328,34 +332,28 @@ input[id="menu-btn"]{
         }
         h2{
             font-family: $semibold;
-
             font-size: 38px;
         }
         p{
             font-family: $medium;
-
             font-size: 14px;
         }
     }
 }
 .red-btn{
-    width: 170px;
     height: 49px;
+    width: 170px;
     border-radius: 4px;
-
-    background-color: $red;
     padding: 15px 40px;
+    background-color: $red;
     color: white;
-
     line-height: 49px;
-
-    
     &:hover{
         background-color: #f84050;
     }
     &:active{
-        color: #d6d6d6;
         background-color: #c53342;
+        color: #d6d6d6;
     }
 }
 .bottom-devider{
@@ -364,11 +362,9 @@ input[id="menu-btn"]{
 .about-me{
     display: grid;
     grid-area: aboutme;
-
     grid-template-areas: "aboutMeText aboutMePhoto";
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
-    
     &_text, &_photo{
         min-width: 300px;
     }
@@ -376,15 +372,14 @@ input[id="menu-btn"]{
         grid-area: aboutMeText;
         p{
             margin: 0 0 20px;
-
             font-family: $medium;
             font-size: 14px;
             line-height: 26px;
         }
     }
     &_photo{
-        min-height: 100px;
         grid-area: aboutMePhoto;
+        min-height: 100px; // нужно, чтоб видеть блок в моб.версии, поскольку фотки нет
         height: 100%;
         background: $dark-blue;
     }
@@ -392,18 +387,16 @@ input[id="menu-btn"]{
 
 .section{
     margin: 0 95px;
-
     padding: 80px 20px;
     h3{
         margin: 0 0 30px;
-
         font-family: $semibold;
         font-size: 32px;
         &:after{
             content: ' ';
             display: block;
-            width: 75px;
             height: 4px;
+            width: 75px;
             margin-top: 10px;
             background: $red;
         }
@@ -434,20 +427,17 @@ input[id="menu-btn"]{
 .leftside-checkpoint{
     background: url(../images/left-cloud.png) top left no-repeat;
 }
-
 .checkpoint{
-    margin: 10px auto 0;
-    width: 40px;
     height: 40px;
-
+    width: 40px;
+    margin: 10px auto 0;
     border: 1px solid black;
     border-radius: 50%;
     background: #f9f9f9;
     .marker{
-        margin: 10px; 
-        width: 18px;
         height: 18px;
-
+        width: 18px;
+        margin: 10px; 
         border: 1px solid black;
         border-radius: 50%;
         background: $red;
@@ -474,9 +464,9 @@ input[id="menu-btn"]{
     }
 }
     .line{
-    margin: 0 auto;
-    width: 1px;
     height: 100%;
+    width: 1px;
+    margin: 0 auto;
     background: black;
 }
 .workplace-info{
@@ -489,8 +479,8 @@ input[id="menu-btn"]{
     position: fixed;
     top: 30%;
     left: 20%;
-    width: 0;
     height: 0;
+    width: 0;
     overflow: hidden;
     border-radius: 10px;
     background: $dark-blue;
@@ -500,9 +490,9 @@ input[id="menu-btn"]{
     -webkit-transition: all 0.25s linear;
     .close-wrap{
         grid-area:close;
-        justify-self: end;
         padding-right: 10px;
         padding-bottom: 10px;
+        justify-self: end;
     }
     .company-logo{
         grid-area: company-logo;
@@ -514,8 +504,8 @@ input[id="menu-btn"]{
     }
     .company-name{
         grid-area: company-name;
-        justify-self: end;
         padding: 5px;
+        justify-self: end;
         a{
             font-family: $mediumitalic;
             font-size: 28px;
@@ -531,13 +521,13 @@ input[id="menu-btn"]{
     }
     .work-period{
         grid-area: work-period;
-        align-self: center;
         padding: 5px 0;
+        align-self: center;
         font-family: $semibold;
         font-size: 20px;
-        text-transform: uppercase;
         color: white;
         opacity: 0.8;
+        text-transform: uppercase;
     }
     .duties{
         grid-area: duties;
@@ -551,18 +541,18 @@ input[id="menu-btn"]{
     }
 }
 .active-workplace-info{
-    width: 60%;
     height: auto;
+    width: 60%;
     border: 1px solid black;
     padding: 20px;
     opacity: 1;
+
     transition: opacity 0.25s linear;
     -webkit-transition: opacity 0.25s linear;
 }
 .work-place-cloud{
     grid-area: cloud;
     z-index: -1;
-      
     border-radius: 8px;
     padding: 20px;
     background: $dark-blue;
@@ -570,13 +560,12 @@ input[id="menu-btn"]{
         margin: 10px 0;
     }
     .position{
-        color: white;
         font-family: $semibold;
         font-size: 16px;
+        color: white;
     }
     .company{
         margin-left: 10px;
-        
         opacity: 0.8; 
     }
     .company, .work-period{
@@ -591,13 +580,11 @@ input[id="menu-btn"]{
         color: white;
     }
 }
-
 .education{
     grid-area: education;
 }
 .skills{
     grid-area: skills;
-    margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: "heading heading heading"
@@ -605,10 +592,10 @@ input[id="menu-btn"]{
                          ;
 
     z-index: -1;
+    margin: 0;
     padding: 80px 75px 65px 115px;
     background: $dark-blue;
     color: white;
-
     h3{
         grid-area: heading;
     }
@@ -633,62 +620,49 @@ input[id="menu-btn"]{
 }
 .progress{
     display: inline-block;
-    width: 80%;
     height: 5px;
+    width: 80%;
 
     margin-right: 10px;
     margin-bottom: 4px;
-    
+
     background: rgba(255, 255, 255, 0.7);
     .filling{
         height: 100%;
         background: $red;
         width: 1%;
+        transition: all 2s;
+        -webkit-transition: all 2s;
         .dot{
             position: relative;
             left: 100%;
-            top: -6px;
-            
+            top: -6px;            
             height: 18px;
             width: 18px;
-            border-radius: 50%;
-            
             margin-right: -9px;
-            
+
+            border-radius: 50%;            
             background: $red;
         }
         &.html {
-            width: 90%;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 95%;
         }
         &.css{
-            width: 90%;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 95%;
         }
         &.scss{
-            width: 90%;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 95%;
         }
         &.javascript{
-            width: 60%;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 70%;
         }
         &.english{
-            width: 80%;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 90%;
         }
         &.photoshop{
-            width: 50%;    transition: all 2s;
-            -webkit-transition: all 2s;
+            width: 50%;
         }
-
     }
-
 }
 .percantage{
     display: inline-block;
@@ -706,10 +680,9 @@ input[id="menu-btn"]{
 #contat-form{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
     button{
-        width: 100px;
         height: 35px;
+        width: 100px;
         border: none;
         background: $red;
         color: white;
@@ -722,21 +695,19 @@ fieldset{
 }
 .contact-info{
     input{
-        width: 100%;
         height: 35px;
+        width: 100%;
         margin-bottom: 20px;
         border: 1px solid black; 
-        padding-left: 10px;
-        padding-right: 10px;
+        padding:  0 10px;
     }
 }
 
 #massege{
     height: 145px;
     width: 100%;
+    resize: none;
     border: 1px solid black;
-    resize: none; 
-
     padding: 10px;
 }
 
@@ -745,12 +716,10 @@ fieldset{
     font-family: $medium;
     img{
         float: left;
-
         margin: 20px 40px 20px 100px;
     }
     h4{
         margin: 15px 0;
-
         font-size: 18px;
     }
     a{
@@ -768,9 +737,9 @@ fieldset{
     border: 1px solid black;
     padding: 20px;
     background: white;
+
     text-align: center;
     font-family: $medium;
-
     h4{
         font-size: 20px;
     }
@@ -781,39 +750,39 @@ fieldset{
 .close-btn{
     position: relative;
     left: 95%;
-    width: 11px;
     height: 13px;
+    width: 11px;
     padding-top: 5px;
     padding-left: 1px;
-
     cursor: pointer;
     div{
-        width: 10px;
         height: 2px;
+        width: 10px;
         background: $red;
-        
         &:first-child{
             transform: matrix(1, -1, 1, 1, 0, 0);
-            -ms-transform: matrix(1, -1, 1, 1, 0, 0); /* IE 9 */
             -webkit-transform: matrix(1, -1, 1, 1, 0, 0);
+            -ms-transform: matrix(1, -1, 1, 1, 0, 0); /* IE 9 */
         }
         &:last-child{
             transform: matrix(1, 1, -1, 1, 0, -2);
-            -ms-transform: matrix(1, 1, -1, 1, 0, -2); /* IE 9 */
             -webkit-transform: matrix(1, 1, -1, 1, 0, -2);
+            -ms-transform: matrix(1, 1, -1, 1, 0, -2); /* IE 9 */
         }
     }
 }
 .hidden{
     display: none;
-    width: 0px;
     height: 0px;
+    width: 0px;
+
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
 }
 .height0{
     height: 0px;
     overflow: hidden;
+    
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear;
 }
@@ -847,8 +816,9 @@ footer{
                             "section2"
                             "section3"
                             ;
-        justify-content: center;
         justify-items: center;
+        justify-content: center;
+    
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
         &_section1,
@@ -867,8 +837,8 @@ footer{
         width: 300px;
     }
     .close-btn{
-        width: 24px;
         height: 24px;
+        width: 24px;
         padding-top: 11px;
         div{
             width: 22px;
@@ -889,7 +859,6 @@ footer{
     .right-cloud, .left-cloud{
         grid-template-areas: "checkpoint cloud";
         grid-template-columns: 120px auto;
-
         margin-bottom: 20px;
     }
     .leftside-checkpoint{
@@ -954,16 +923,15 @@ footer{
         display: block;
         position: fixed;
         z-index: 3;
-        width: 100%;
-        max-height: 100vh;
         height: 0px;
+        max-height: 100vh;
+        width: 100%;
 
         overflow: auto;
-        
         text-align: center;
+        
         transition: all 0.25s linear;
         -webkit-transition: all 0.25s linear;
-
         .menu-photo{
             display: none;
         }
@@ -973,17 +941,15 @@ footer{
             grid-template-columns: 100%;
         }
         &:checked ~ .cite-wraper > .menu-container{
-            width: 100%;
-            max-height: 100vh;
             height: auto;
-
+            max-height: 100vh;
+            width: 100%;
             overflow: auto;
 
             transition: all 0.25s linear;
             -webkit-transition: all 0.25s linear;
         }
     }
-
     .banner_text{
         p{
             font-size: 18px;
@@ -991,6 +957,11 @@ footer{
     }
     .section{
         margin: 0 10px;
+    }
+    .right-cloud, .left-cloud{
+        grid-template-areas: "cloud checkpoint";
+        grid-template-columns: 100% 40px;   
+        grid-template-rows: auto 0px;
     }
     .rightside-checkpoint, .leftside-checkpoint{
         background: none;
@@ -1001,11 +972,6 @@ footer{
             display: none;
         }
     }
-    .right-cloud, .left-cloud{
-        grid-template-areas: "cloud checkpoint";
-        grid-template-columns: 100% 40px;   
-        grid-template-rows: auto 0px;
-    }
     .workplace-info{
         grid-template-areas:"close"
                             "company-logo"
@@ -1014,14 +980,14 @@ footer{
                             "work-period"
                             "duties"
                             ;
-        max-height: 90vh;
         top: 10%;
         left: 0;
+        z-index: 99;
+        max-height: 90vh;
         width: 0;
         border-radius: 0;
         overflow: auto;
         justify-items: center;
-        z-index: 99;
         .close-wrap{
             padding-right: 23px;
             padding-bottom: 0px;
@@ -1071,13 +1037,6 @@ footer{
         display: grid;
         grid-template-columns: 1fr;
     }
-    // .contacts_line{
-    //     text-align: left;
-    //     img{    
-    //         margin: 10px 10px 30px;
-    //         float: left;
-    //     }
-    // }
     #thanx-massege{
         top: 20%;
         left: 10%;

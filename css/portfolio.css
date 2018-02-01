@@ -1,6 +1,6 @@
 .tub-section {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2); }
   .tub-section div {
     display: inline-block;
     margin-bottom: -2px;
@@ -17,14 +17,14 @@
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  align-content: start;
   justify-content: space-around;
+  align-content: start;
   justify-items: center;
   transition: all 0.25s linear;
   -webkit-transition: all 0.25s linear; }
   .gallery-section .project-wrapper {
-    line-height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    line-height: 0; }
     .gallery-section .project-wrapper:hover .project-desc {
       transition: all 0.25s linear;
       -webkit-transition: all 0.25s linear; }
@@ -46,11 +46,11 @@
   transition: all 0.25s linear;
   -webkit-transition: all 0.25s linear; }
   .project-desc .project-name {
-    font-size: 22px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    font-size: 22px; }
   .project-desc .project-stack {
-    font-size: 16px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-size: 16px; }
 
 .project-link {
   display: grid;
