@@ -598,6 +598,7 @@ input[id="menu-btn"]{
     color: white;
     h3{
         grid-area: heading;
+        justify-self: start;
     }
     &_section1, &_section2, &_section3{
         p{
@@ -635,7 +636,7 @@ input[id="menu-btn"]{
         -webkit-transition: all 2s;
         .dot{
             position: relative;
-            left: 100%;
+            left: 97%;
             top: -6px;            
             height: 18px;
             width: 18px;

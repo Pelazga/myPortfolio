@@ -471,7 +471,8 @@ input[id="menu-btn"] {
   background: #353541;
   color: white; }
   .skills h3 {
-    grid-area: heading; }
+    grid-area: heading;
+    justify-self: start; }
   .skills_section1 p, .skills_section2 p, .skills_section3 p {
     font-family: "Raleway-Medium", Arial, Helvetica, sans-serif;
     font-size: 18px; }
@@ -499,7 +500,7 @@ input[id="menu-btn"] {
     -webkit-transition: all 2s; }
     .progress .filling .dot {
       position: relative;
-      left: 100%;
+      left: 97%;
       top: -6px;
       height: 18px;
       width: 18px;
