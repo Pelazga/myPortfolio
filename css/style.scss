@@ -465,6 +465,13 @@ input[id="menu-btn"]{
         animation-direction: alternate;
         animation-iteration-count: infinite;
     }
+    &:hover{
+        border: 1px solid rgba(53, 53, 65, 0.8);
+        background: #d6d6e2;
+        & .marker{
+            border: 1px solid rgba(53, 53, 65, 0.8);;
+        }
+    }
 }
     .line{
     margin: 0 auto;
@@ -745,6 +752,9 @@ fieldset{
         margin: 15px 0;
 
         font-size: 18px;
+    }
+    a{
+        color: black;
     }
 }
 

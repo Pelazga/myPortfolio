@@ -354,6 +354,11 @@ input[id="menu-btn"] {
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: infinite; }
+  .available-info:hover {
+    border: 1px solid rgba(53, 53, 65, 0.8);
+    background: #d6d6e2; }
+    .available-info:hover .marker {
+      border: 1px solid rgba(53, 53, 65, 0.8); }
 
 .line {
   margin: 0 auto;
@@ -575,6 +580,8 @@ fieldset {
   .contacts_line h4 {
     margin: 15px 0;
     font-size: 18px; }
+  .contacts_line a {
+    color: black; }
 
 #thanx-massege {
   position: fixed;
