@@ -54,9 +54,11 @@ var users = {
 	}
 };
 var loginWindow = document.getElementById('login-window');
+var bgForPopUp = document.getElementById('bg_for_popup');
 
 document.getElementById('enter-link').onclick = function(){
 	loginWindow.classList.remove('hidden');
+	bgForPopUp.classList.remove('hidden')
 };
 
 var loginBtn = document.getElementById('login-btn');
@@ -64,10 +66,10 @@ var message = document.getElementById('login-msg');
 var loginForm = document.getElementById('login-form');
 var closeLoginWindowBtn = document.getElementById('login-window-close-btn');
 
-loginForm.addEventListener("submit", function(event){
+loginForm.addEventListener('submit', function(event){
 	event.preventDefault()
 });
-loginForm.addEventListener("submit", loginImitation);
+loginForm.addEventListener('submit', loginImitation);
 
 function loginImitation(){
 	message.classList.add('height0');
@@ -94,8 +96,19 @@ function loginCheck (){
 			message.classList.remove('height0');
 		}
 };
+
 closeLoginWindowBtn.onclick = function(){
+	hideEverything();
+};
+function hideEverything() {
+	bgForPopUp.classList.add('hidden');
 	loginWindow.classList.add('hidden');
+	popUpWindow.classList.add('hidden');
+	closeOpenedWindows();
+}
+
+bgForPopUp.onclick = function(){
+	hideEverything();
 };
 
 // для формы логина конец
@@ -111,18 +124,20 @@ for (index = 0; index < checkpoints.length; index++) {
 
 function openInfoWind(event) {
 	var checkpointId = this.id;
-	infoWindowId = checkpointId + "-info";
+	infoWindowId = checkpointId + '-info';
 	closeOpenedWindows();
-	document.getElementById(infoWindowId).classList.add("active-workplace-info");
+	document.getElementById(infoWindowId).classList.add('active-workplace-info');
+	bgForPopUp.classList.remove('hidden');
 };
 
 function closeOpenedWindows() {
-	var workplaceInfoWind = document.querySelectorAll(".workplace-info");
+	var workplaceInfoWind = document.querySelectorAll('.workplace-info');
 	for (i=0; i<workplaceInfoWind.length; i++){
-		if (workplaceInfoWind[i].classList.contains("active-workplace-info")){
-			workplaceInfoWind[i].classList.remove("active-workplace-info");
+		if (workplaceInfoWind[i].classList.contains('active-workplace-info')){
+			workplaceInfoWind[i].classList.remove('active-workplace-info');
 		}
 	}
+	bgForPopUp.classList.add('hidden');
 };
 
 var closeBtns = document.querySelectorAll('.workplace-info .close-wrap'),
@@ -134,7 +149,7 @@ for (index = 0; index < closeBtns.length; index++) {
 };
 document.onkeydown = function (event){
 	if (event.keyCode == 27)
-	closeOpenedWindows();
+	hideEverything();
 };
 function closeInfoWind(event) {
 	closeOpenedWindows();
@@ -148,7 +163,8 @@ var popUpWindow = document.getElementById('thanx-massege');
 
 
 document.getElementById('thanx-massege-close-btn').onclick = function(){
-  popUpWindow.classList.add('hidden')
+	popUpWindow.classList.add('hidden')
+	bgForPopUp.classList.add('hidden');
 };
 // для всплывающего окошка c благодарностью о подписке конец
 
@@ -162,7 +178,8 @@ $(document).ready(function() {
 			url: "php/mail.php", //Change
 			data: th.serialize()
 		}).done(function() {
-        popUpWindow.classList.remove('hidden'); 
+				popUpWindow.classList.remove('hidden');
+				bgForPopUp.classList.remove('hidden');
         // showHideSuccessMassege();
 			setTimeout(function() {
         // Done Functions
@@ -176,8 +193,8 @@ $(document).ready(function() {
 // для отправки данных с формы конец
 
 //для плавного заполнения прогрессбаров начало
-const SkillsSection1 = document.getElementById("skills_section1");
-const SkillBars = document.querySelectorAll(".skill-bar");
+const SkillsSection1 = document.getElementById('skills_section1');
+const SkillBars = document.querySelectorAll('.skill-bar');
 function moveProgressBar(id, skillClass) {
 	var elementById = document.getElementById(id);
 	var MoveProgresAt = (window.scrollY + window.innerHeight) - elementById.clientHeight;
@@ -188,16 +205,16 @@ function moveProgressBar(id, skillClass) {
 }
 function moveProgressBars () {
 	// first section
-	moveProgressBar("html-skill", "html");
-	moveProgressBar("css-skill", "css");
-	moveProgressBar("scss-skill", "scss");
+	moveProgressBar('html-skill', 'html');
+	moveProgressBar('css-skill', 'css');
+	moveProgressBar('scss-skill', 'scss');
 
 	//2-nd section
-	moveProgressBar("javascript-skill", "javascript");
+	moveProgressBar('javascript-skill', 'javascript');
 
 	//3-d section
-	moveProgressBar("english-skill", "english");
-	moveProgressBar("photoshop-skill", "photoshop");
+	moveProgressBar('english-skill', 'english');
+	moveProgressBar('photoshop-skill', 'photoshop');
 }
 	
 window.addEventListener('scroll', throttle(moveProgressBars, 100));

@@ -16,7 +16,7 @@
     </label>
     <a href="#home" id="up-button" class="up-button up-button-hidden"><div></div></a>
     <div class="cite-wraper">
-        <div class="menu-container" id="menu-container">
+        <header class="menu-container" id="menu-container">
             <div class="menu-photo">
                 <img src="images/my-photo.jpg" alt="my photo">
                 <div class="menu-photo_text-container">
@@ -38,20 +38,20 @@
                 <li class="menu-item"><a class="menu-link" href="#contactWithMe">Контакты</a></li>
                 <li class="menu-item menu-link" id="enter-link">Войти</li>
             </ul>
-            <div id="login-window" class="hidden">
-                <div class="close-btn" id="login-window-close-btn">
-                    <div></div>
-                    <div></div>
-                </div>s
-                <form id="login-form">
-                    <input type="text" name="login" id="login" placeholder="Логин" required="required">
-                    <input type="password" name="pass" id="pass" placeholder="Пароль" required="required">
-                    <br>
-                    <button>Войти</button>
-                </form>
-                <div id="login-msg" class="height0">
-                    
-                </div>
+        </header>
+        <div id="bg_for_popup" class="bg_for_popup hidden"></div>
+        <div id="login-window" class="hidden">
+            <div class="close-btn" id="login-window-close-btn">
+                <div></div>
+                <div></div>
+            </div>
+            <form id="login-form">
+                <input type="text" name="login" id="login" placeholder="Логин" required="required">
+                <input type="password" name="pass" id="pass" placeholder="Пароль" required="required">
+                <br>
+                <button>Войти</button>
+            </form>
+            <div id="login-msg" class="height0">
             </div>
         </div>     
         <div class="body-container" id="body-container">
@@ -79,12 +79,14 @@
             <div id="workExp" class="section bottom-devider work-exp">
                 <h3>Опыт работы</h3>
                 <div class="clouds-wrap right-cloud">
+
                     <div class="rightside-checkpoint">
                         <div class="checkpoint available-info" id="manzana">
                                 <div class="marker"></div>
                         </div>
                         <div class="line"></div>
                     </div>
+
                     <div class="workplace-info" id="manzana-info">
                         <div class="close-wrap" id="manzana-close-btn">
                             <div class="close-btn">
@@ -108,6 +110,8 @@
                                 </ul>
                         </div>
                     </div>
+
+
                     <div class="work-place-cloud">
                         <p class="position">
                             Content Manager
@@ -119,25 +123,19 @@
                             Май 2016 - Дек 2017
                         </p>
                     </div>
+
                 </div>
+
+
                 <div class="clouds-wrap left-cloud">
-                    <div class="work-place-cloud">
-                        <p class="position">
-                            Комплектовщик
-                            <span class="company">
-                                Каменная Индустрия
-                            </span>
-                        </p>
-                        <p class="work-period">
-                            Май 2015 - Окт 2015
-                        </p>
-                    </div>
+
                     <div class="leftside-checkpoint">
                         <div class="checkpoint available-info" id="stone-industry">
                             <div class="marker"></div>
                         </div>
                         <div class="line"></div>
                     </div>
+
                     <div class="workplace-info" id="stone-industry-info">
                         <div class="close-wrap"  id="stone-industry-close-btn">
                             <div class="close-btn">
@@ -156,47 +154,9 @@
                                 <li>Работа в админ.панели Magento</li>
                                 <li>Редактирование  существующих атрибутов товаров, создание новых атрибутов</li>
                             </ul>
-                    </div>
-                </div>
-                </div>
-                <div class="clouds-wrap right-cloud">
-                    <div class="rightside-checkpoint">
-                        <div class="checkpoint available-info" id="global-bilgi">
-                            <div class="marker"></div>
-                        </div>
-                        <div class="line"></div>
-                        <div class="workplace-info" id="global-bilgi-info">
-                            <div class="close-wrap" id="global-bilgi-close-btn">
-                                <div class="close-btn">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div class="company-logo"><img src="images/work-exp/manzana.png" alt="Manzana logo"></div>
-                            <p class="company-name"> <a target="_blank" href="https://manzana.ua">Manzana</a></p>
-                            <p class="position">Тех.поддержка</p>
-                            <p class="work-period">May 2016 - Dec 2017</p>
-                            <div class="duties">
-                                <ul>
-                                    <li>Наполнение сайта новой информацией и ее редактирование</li>
-                                    <li>Создание и размещение на сайте баннеров</li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
-                    <div class="work-place-cloud">
-                        <p class="position">
-                            Оператор колл-центра, тех.поддержка
-                            <span class="company">
-                                Global Bilgi
-                            </span>
-                        </p>
-                        <p class="work-period">
-                            Май 2016 - Дек 2017
-                        </p>
-                    </div>
-                </div>
-                <div class="clouds-wrap left-cloud">
+                    
                     <div class="work-place-cloud">
                         <p class="position">
                             Комплектовщик
@@ -208,12 +168,103 @@
                             Май 2015 - Окт 2015
                         </p>
                     </div>
-                    <div class="leftside-checkpoint">
-                        <div class="checkpoint">
-                            <div class="marker"></div>
+
+                </div>
+
+
+                <div class="clouds-wrap right-cloud">
+
+                    <div class="rightside-checkpoint">
+                        <div class="checkpoint available-info" id="manzana">
+                                <div class="marker"></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="workplace-info" id="manzana-info">
+                        <div class="close-wrap" id="manzana-close-btn">
+                            <div class="close-btn">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="company-logo"><img src="images/work-exp/manzana.png" alt="Manzana logo"></div>
+                        <p class="company-name"> <a target="_blank" href="https://manzana.ua">Manzana</a></p>
+                        <p class="position">Content Manager</p>
+                        <p class="work-period">May 2016 - Dec 2017</p>
+                        <div class="duties">
+                                <ul>
+                                    <li>Наполнение сайта новой информацией и ее редактирование</li>
+                                    <li>Создание и размещение на сайте баннеров</li>
+                                    <li>Работа в админ.панели Magento</li>
+                                    <li>Редактирование  существующих атрибутов товаров, создание новых атрибутов</li>
+                                    <li>Редактирование изображений</li>
+                                    <li>Съемка новых товаров, выбор и редактирование получившихся фото для размещения на сайте.</li>
+                                    <li>Написание и перевод текстов</li>
+                                </ul>
                         </div>
                     </div>
+
+                    <div class="work-place-cloud">
+                        <p class="position">
+                            Content Manager
+                            <span class="company">
+                                Manzana
+                            </span>
+                        </p>
+                        <p class="work-period">
+                            Май 2016 - Дек 2017
+                        </p>
+                    </div>
+
                 </div>
+
+                
+                <div class="clouds-wrap left-cloud">
+
+                    <div class="leftside-checkpoint">
+                        <div class="checkpoint available-info" id="stone-industry">
+                            <div class="marker"></div>
+                        </div>
+                        <div class="line"></div>
+                    </div>
+
+                    <div class="workplace-info" id="stone-industry-info">
+                        <div class="close-wrap"  id="stone-industry-close-btn">
+                            <div class="close-btn">
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="company-logo"><img src="images/work-exp/manzana.png" alt="Manzana logo"></div>
+                        <p class="company-name"> <a target="_blank" href="https://manzana.ua">Manzana</a></p>
+                        <p class="position">Комлектовщик</p>
+                        <p class="work-period">May 2016 - Dec 2017</p>
+                        <div class="duties">
+                            <ul>
+                                <li>Наполнение сайта новой информацией и ее редактирование</li>
+                                <li>Создание и размещение на сайте баннеров</li>
+                                <li>Работа в админ.панели Magento</li>
+                                <li>Редактирование  существующих атрибутов товаров, создание новых атрибутов</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="work-place-cloud">
+                        <p class="position">
+                            Комплектовщик
+                            <span class="company">
+                                Каменная Индустрия
+                            </span>
+                        </p>
+                        <p class="work-period">
+                            Май 2015 - Окт 2015
+                        </p>
+                    </div>
+
+                </div>
+
+
             </div>
             <div id="education" class="section bottom-devider education">
                 <h3>Образование и курсы</h3>
