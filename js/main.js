@@ -26,7 +26,28 @@ function throttle(func, ms) {
 	}
   
 	return wrapper;
-  }
+	}
+
+// обработка нажатия на подложку для попапов и кнопку esc начало
+var bgForPopUp = document.getElementById('bg_for_popup');
+
+function hideEverything() {
+	bgForPopUp.classList.add('hidden');
+	loginWindow.classList.add('hidden');
+	popUpWindow.classList.add('hidden');
+	closeOpenedWindows();
+}
+
+bgForPopUp.onclick = function(){
+	hideEverything();
+};
+
+document.onkeydown = function (event){
+	if (event.keyCode == 27)
+	hideEverything();
+};
+// обработка нажатия н подложку для попапов и кнопку esc конец
+
 
 // для кнопки вверх начало
 var banner = document.getElementById('home');
@@ -54,7 +75,6 @@ var users = {
 	}
 };
 var loginWindow = document.getElementById('login-window');
-var bgForPopUp = document.getElementById('bg_for_popup');
 
 document.getElementById('enter-link').onclick = function(){
 	loginWindow.classList.remove('hidden');
@@ -100,17 +120,6 @@ function loginCheck (){
 closeLoginWindowBtn.onclick = function(){
 	hideEverything();
 };
-function hideEverything() {
-	bgForPopUp.classList.add('hidden');
-	loginWindow.classList.add('hidden');
-	popUpWindow.classList.add('hidden');
-	closeOpenedWindows();
-}
-
-bgForPopUp.onclick = function(){
-	hideEverything();
-};
-
 // для формы логина конец
 
 // для мест работы начало
@@ -146,10 +155,6 @@ var closeBtns = document.querySelectorAll('.workplace-info .close-wrap'),
 for (index = 0; index < closeBtns.length; index++) {
 	closeBtn = closeBtns[index];
 	closeBtn.addEventListener('click', closeInfoWind);
-};
-document.onkeydown = function (event){
-	if (event.keyCode == 27)
-	hideEverything();
 };
 function closeInfoWind(event) {
 	closeOpenedWindows();
