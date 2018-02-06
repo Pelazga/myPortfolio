@@ -15,6 +15,21 @@
         <div></div>
     </label>
     <a href="#home" id="up-button" class="up-button up-button-hidden"><div></div></a>
+    <div id="bg_for_popup" class="bg_for_popup hidden"></div>
+    <div id="login-window" class="hidden">
+        <div class="close-btn" id="login-window-close-btn">
+            <div></div>
+            <div></div>
+        </div>
+        <form id="login-form">
+            <input type="text" name="login" id="login" placeholder="Логин" required="required">
+            <input type="password" name="pass" id="pass" placeholder="Пароль" required="required">
+            <br>
+            <button>Войти</button>
+        </form>
+        <div id="login-msg" class="height0">
+        </div>
+    </div>   
     <section class="cite-wraper">
         <header class="menu-container" id="menu-container">
             <div class="menu-photo">
@@ -38,22 +53,7 @@
                 <li class="menu-item"><a class="menu-link" href="#contactWithMe">Контакты</a></li>
                 <li class="menu-item menu-link" id="enter-link">Войти</li>
             </ul>
-        </header>
-        <div id="bg_for_popup" class="bg_for_popup hidden"></div>
-        <div id="login-window" class="hidden">
-            <div class="close-btn" id="login-window-close-btn">
-                <div></div>
-                <div></div>
-            </div>
-            <form id="login-form">
-                <input type="text" name="login" id="login" placeholder="Логин" required="required">
-                <input type="password" name="pass" id="pass" placeholder="Пароль" required="required">
-                <br>
-                <button>Войти</button>
-            </form>
-            <div id="login-msg" class="height0">
-            </div>
-        </div>     
+        </header>  
         <main class="body-container" id="body-container">
             <section id="home" class="banner">
                 <div class="blured-bg">
@@ -385,7 +385,7 @@
                         <p>Skill name</p>
                         <div class="skill-bar">
                             <div class="progress">
-                                <div class="filling" id="english-skill">
+                                <div class="filling">
                                     <div class="dot"></div>
                                 </div>
                             </div>
@@ -394,7 +394,7 @@
                         <p>Skill name</p>
                         <div class="skill-bar">
                             <div class="progress">
-                                <div class="filling" id="english-skill">
+                                <div class="filling">
                                     <div class="dot"></div>
                                 </div>
                             </div>
@@ -501,7 +501,7 @@
                     <img id="li-img" src="images/li.png" alt="">
                     <img id="li-hover-img" src="images/li-hover.png" alt="">
                 </a>
-                
+
                 <p class="copyright">Design by Junaed Ahmed, developed by Dmyterko Dmytro</p>
             </footer>
         </main>

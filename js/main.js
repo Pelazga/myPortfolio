@@ -198,8 +198,7 @@ $(document).ready(function() {
 // для отправки данных с формы конец
 
 //для плавного заполнения прогрессбаров начало
-const SkillsSection1 = document.getElementById('skills_section1');
-const SkillBars = document.querySelectorAll('.skill-bar');
+
 function moveProgressBar(id, skillClass) {
 	var elementById = document.getElementById(id);
 	var MoveProgresAt = (window.scrollY + window.innerHeight) - elementById.clientHeight;
