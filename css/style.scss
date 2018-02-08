@@ -648,7 +648,7 @@ input[id="menu-btn"]{
         -webkit-transition: all 2s;
         .dot{
             position: relative;
-            left: 97%;
+            left: 98%;
             top: -6px;            
             height: 18px;
             width: 18px;
@@ -837,11 +837,25 @@ footer{
         &_section1,
         &_section2,
         &_section3{
-            width: 90%;
+            width: 100%;
             p{
                 text-align: center;
             }
+            .progress{
+                .filling{
+                    .dot{
+                        left: 98%;
+                    } 
+                }
+            }
         }
+    }
+}
+.progress{
+    .filling{
+        .dot{
+            left: 97%;
+        } 
     }
 }
 // Styles for mobile devices
@@ -1057,5 +1071,14 @@ footer{
     }
     #up-button{
         display: none;
+    }
+}
+@media screen and (max-width:440px){
+    .progress{
+        .filling{
+            .dot{
+                left: 94%;
+            } 
+        }
     }
 }

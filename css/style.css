@@ -509,7 +509,7 @@ input[id="menu-btn"] {
     -webkit-transition: all 2s; }
     .progress .filling .dot {
       position: relative;
-      left: 97%;
+      left: 98%;
       top: -6px;
       height: 18px;
       width: 18px;
@@ -661,9 +661,14 @@ footer {
     transition: all 0.25s linear;
     -webkit-transition: all 0.25s linear; }
     :checked ~ .cite-wraper .body-container .skills_section1, :checked ~ .cite-wraper .body-container .skills_section2, :checked ~ .cite-wraper .body-container .skills_section3 {
-      width: 90%; }
+      width: 100%; }
       :checked ~ .cite-wraper .body-container .skills_section1 p, :checked ~ .cite-wraper .body-container .skills_section2 p, :checked ~ .cite-wraper .body-container .skills_section3 p {
-        text-align: center; } }
+        text-align: center; }
+      :checked ~ .cite-wraper .body-container .skills_section1 .progress .filling .dot, :checked ~ .cite-wraper .body-container .skills_section2 .progress .filling .dot, :checked ~ .cite-wraper .body-container .skills_section3 .progress .filling .dot {
+        left: 98%; } }
+
+.progress .filling .dot {
+  left: 97%; }
 
 @media screen and (max-width: 1200px) {
   #login-window {
@@ -809,3 +814,7 @@ footer {
     width: 80%; }
   #up-button {
     display: none; } }
+
+@media screen and (max-width: 440px) {
+  .progress .filling .dot {
+    left: 94%; } }
