@@ -72,6 +72,9 @@ var users = {
 	},
 	user2: {
 		pass: 'pass2'
+	},
+	Arlek: {
+		pass: 'skalat'
 	}
 };
 var loginWindow = document.getElementById('login-window');
