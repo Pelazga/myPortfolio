@@ -343,7 +343,7 @@
             </section>    
             <section id="mySkills" class="section skills">
                     <h3>Навыки</h3>
-                    <div class="skills_section1" id="skills_section1">
+                    <div class="skills_section1">
                         <p>HTML 5</p>
                         <div class="skill-bar">
                             <div class="progress">
@@ -508,5 +508,15 @@
     </div>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        {
+        if (window.innerWidth < 981) document.write ('<script type="text/javascript" src="js/mobileMenu.js" ></sc' + 'ript>');
+        }
+    </script>
+    <script type="text/javascript">
+        {
+        if (window.innerWidth > 1850) document.write ('<script type="text/javascript" src="js/FHDOpenedSideMenu.js" ></sc' + 'ript>');
+        }
+    </script>
 </body>
 </html>

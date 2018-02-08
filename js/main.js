@@ -75,6 +75,9 @@ var users = {
 	},
 	Arlek: {
 		pass: 'skalat'
+	},
+	Pelazga: {
+		pass: 'skalat'
 	}
 };
 var loginWindow = document.getElementById('login-window');
@@ -211,7 +214,7 @@ function moveProgressBar(id, skillClass) {
 	}
 }
 function moveProgressBars () {
-	// first section
+	// 1-st section
 	moveProgressBar('html-skill', 'html');
 	moveProgressBar('css-skill', 'css');
 	moveProgressBar('scss-skill', 'scss');

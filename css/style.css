@@ -644,7 +644,7 @@ footer {
     font-size: 12px; }
 
 #fb-hover-img, #twitter-hover-img, #li-hover-img {
-  left: -32px;
+  left: -35px;
   opacity: 0;
   transition: all 0.5s; }
 
