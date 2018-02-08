@@ -148,17 +148,13 @@ $medium: 'Raleway-Medium', Arial, Helvetica, sans-serif;
         grid-template-columns: 100%;
     }
     .project-desc{
-        height: 184px;
         width: 200px;
-        background: rgba(53, 53, 65, 0.6);
-        transform: translatey(-184px); 
     }
     .project-wrapper{
-        height: 184px;
         width: 200px;
-        margin: 20px;
-        &:hover .project-desc{
-            transform: translatey(-184px);
-        } 
+        img{
+            position: relative;
+            left: -80px;
+        }
     }
 }

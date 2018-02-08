@@ -1059,6 +1059,12 @@ footer{
         display: grid;
         grid-template-columns: 100%;
         margin: 10px 0;
+        fieldset{
+            padding: 10px 0;
+        }
+        button{
+            width: 100%;
+        }
     }
     .contacts_section{
         display: grid;
