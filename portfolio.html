@@ -72,9 +72,9 @@
                     <div id="seoText" class="tabb">Тексты (test)</div>
                 </div>
                 <div id="webProjects" class="gallery-section gallery-section-active">
-                    <script id="box" type="text/x-handlebars-template">
-                        {{#each box}}
-                            <div class="box">
+                    <script id="webProject" type="text/x-handlebars-template">
+                        {{#each webProject}}
+                            <div class="project-wrapper">
                                 <img class="project-img-500" src="{{image500src}}" alt="{{altForImages}}">
                                 <img class="project-img-360" src="{{image360src}}" alt="{{altForImages}}">
                                 <img class="project-img" src="{{imageHDsrc}}" alt="{{altForImages}}">
@@ -236,8 +236,8 @@
 
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/handlebars-v4.0.11.js"></script>
-    <script src="js/portfolio.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
     <script type="text/javascript">
         {
         if (window.innerWidth < 981) document.write ('<script type="text/javascript" src="js/mobileMenu.js" ></sc' + 'ript>');

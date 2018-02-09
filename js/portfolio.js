@@ -3,11 +3,12 @@
     $.ajax({
         url: "data.json"
     }).done(function(data){
-        var source  = document.getElementById("box").innerHTML;
-        var template = Handlebars.complite(source);
+
+        var source  = document.getElementById("webProject").innerHTML;
+        var template = Handlebars.compile(source);
         var html = template(data);
 
-        document.body.innerHTML = html;
+        document.getElementById("webProjects").innerHTML = html;
     })
 })();
 
