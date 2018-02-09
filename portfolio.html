@@ -87,58 +87,23 @@
                     <div id="seoText" class="tabb">Тексты (test)</div>
                 </div>
                 <div id="webProjects" class="gallery-section gallery-section-active">
-                    <div class="project-wrapper">
-                        <img class="project-img-500" src="images/gallery/baxter-500.jpg" alt="Baxter training project">
-                        <img class="project-img-360" src="images/gallery/baxter-360.jpg" alt="Baxter training project">
-                        <img class="project-img" src="images/gallery/baxter-hd.jpg" alt="Baxter training project">
-                        <div class="project-desc">
-                            <p class="project-name">Baxter</p>
-                            <p class="project-stack">HTML5, CSS3</p>
-                            <p class="project-link">
-                                <a href="projects/baxter/index.html" target="_blank">Посмотреть проэкт</a>
-                                <a href="https://github.com/Pelazga/baxter" target="_blank">Git repo</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-wrapper">
-                        <img class="project-img-500" src="images/gallery/crios-500.jpg" alt="Crios">
-                        <img class="project-img-360" src="images/gallery/crios-360.jpg" alt="Crios">
-                        <img class="project-img" src="images/gallery/crios-hd.jpg" alt="Crios">
-                        <div class="project-desc">
-                            <p class="project-name">Crios</p>
-                            <p class="project-stack">HTML5, CSS3, GULP, GIT</p>
-                            <p class="project-link">
-                                <a href="projects/crios/index.html" target="_blank">Посмотреть проэкт</a>
-                                <a href="https://github.com/Pelazga/crios" target="_blank">Git repo</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-wrapper">
-                        <img class="project-img-500" src="images/gallery/portfolio-temp-500.jpg" alt="Portfolio template">
-                        <img class="project-img-360" src="images/gallery/portfolio-temp-360.jpg" alt="Portfolio template">
-                        <img class="project-img" src="images/gallery/portfolio-temp-hd.jpg" alt="Portfolio template">
-                        <div class="project-desc">
-                            <p class="project-name">Portfolio template</p>
-                            <p class="project-stack">HTML5, CSS3</p>
-                            <p class="project-link">
-                                <a href="projects/portfolioTemp/index.html" target="_blank">Посмотреть проэкт</a>
-                                <a href="https://github.com/Pelazga/portfolioTemplate" target="_blank">Git repo</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="project-wrapper">
-                        <img class="project-img-500" src="images/gallery/creative-business-500.jpg" alt="Creative business temp">
-                        <img class="project-img-360" src="images/gallery/creative-business-360.jpg" alt="Creative business temp">
-                        <img class="project-img" src="images/gallery/creative-business-hd.jpg" alt="Creative business temp">
-                        <div class="project-desc">
-                            <p class="project-name">Creative business flyer</p>
-                            <p class="project-stack">HTML5, CSS3, GULP</p>
-                            <p class="project-link">
-                                <a href="projects/businessTempl/index.html" target="_blank">Посмотреть проэкт</a>
-                                <a href="https://github.com/Pelazga/businessTempl" target="_blank">Git repo</a>
-                            </p>
-                        </div>
-                    </div>                   
+                    <script id="webProject" type="text/x-handlebars-template">
+                        {{#each webProject}}
+                            <div class="webProject">
+                                <img class="project-img-500" src="{{image500src}}" alt="{{altForImages}}">
+                                <img class="project-img-360" src="{{image360src}}" alt="{{altForImages}}">
+                                <img class="project-img" src="{{imageHDsrc}}" alt="{{altForImages}}">
+                                <div class="project-desc">
+                                    <p class="project-name">{{projectName}}</p>
+                                    <p class="project-stack">{{projectStuk}}</p>
+                                    <p class="project-link">
+                                        <a href="{{projectUrl}}" target="_blank">Посмотреть проэкт</a>
+                                        <a href="{{projectGitUrl}}" target="_blank">Git repo</a>
+                                    </p>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </script>
                 </div>
                 <div id="translationProjects" class="gallery-section">
                     <div class="project-wrapper">
@@ -285,6 +250,7 @@
     </div>
 
     <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/handlebars-v4.0.11.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>
     <script type="text/javascript">

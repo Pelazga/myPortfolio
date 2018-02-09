@@ -23,10 +23,10 @@
   justify-items: center;
   transition: all 0.25s linear;
   -webkit-transition: all 0.25s linear; }
-  .gallery-section .project-wrapper {
+  .gallery-section .webProject {
     overflow: hidden;
     line-height: 0; }
-    .gallery-section .project-wrapper:hover .project-desc {
+    .gallery-section .webProject:hover .project-desc {
       transition: all 0.25s linear;
       -webkit-transition: all 0.25s linear; }
   .gallery-section-active {
