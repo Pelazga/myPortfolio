@@ -1,0 +1,44 @@
+{
+    "webProject": [
+    {
+      "image500src" : "images/gallery/baxter-500.jpg",
+      "image360src" : "images/gallery/baxter-360.jpg",
+      "imageHDsrc" : "images/gallery/baxter-hd.jpg",
+      "altForImages" : "Baxter training project",
+      "projectName" : "Baxter",
+      "projectStuk" : "HTML5, CSS3",
+      "projectUrl" : "projects/baxter/index.html",
+      "projectGitUrl" : "https://github.com/Pelazga/baxter"
+    },
+    {
+      "image500src" : "images/gallery/crios-500.jpg",
+      "image360src" : "images/gallery/crios-360.jpg",
+      "imageHDsrc" : "images/gallery/crios-hd.jpg",
+      "altForImages" : "Crios training project",
+      "projectName" : "Crios",
+      "projectStuk" : "HTML5, CSS3, GULP, GIT",
+      "projectUrl" : "projects/crios/index.html",
+      "projectGitUrl" : "https://github.com/Pelazga/crios"
+    },
+    {
+      "image500src" : "images/gallery/portfolio-temp-500.jpg",
+      "image360src" : "images/gallery/portfolio-temp-360.jpg",
+      "imageHDsrc" : "images/gallery/portfolio-temp-hd.jpg",
+      "altForImages" : "Portfolio teplate training project",
+      "projectName" : "Portfolio teplate",
+      "projectStuk" : "HTML5, CSS3",
+      "projectUrl" : "projects/portfolioTemp/index.html",
+      "projectGitUrl" : "https://github.com/Pelazga/portfolioTemplate"
+    },
+    {
+      "image500src" : "images/gallery/creative-business-500.jpg",
+      "image360src" : "images/gallery/creative-business-360.jpg",
+      "imageHDsrc" : "images/gallery/creative-business-hd.jpg",
+      "altForImages" : "Creative business flyer",
+      "projectName" : "Creative business flyer",
+      "projectStuk" : "HTML5, CSS3, GULP",
+      "projectUrl" : "projects/businessTempl/index.html",
+      "projectGitUrl" : "https://github.com/Pelazga/businessTempl"
+    }
+    ]
+  }

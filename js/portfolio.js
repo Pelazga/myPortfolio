@@ -1,3 +1,19 @@
+// handlebars interaction start
+(function(){
+    $.ajax({
+        url: "data.json"
+    }).done(function(data){
+        var source  = document.getElementById("webProject").innerHTML;
+        var template = Handlebars.complite(source);
+        var html = template(data);
+
+        document.body.innerHTML = html;
+    })
+})();
+
+
+// handlebars interaction end
+
 var projectLink = document.getElementById("webPages");
 var projectGall = document.getElementById("webProjects");
 var translationLink = document.getElementById("translations");
