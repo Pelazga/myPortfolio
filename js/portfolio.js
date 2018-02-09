@@ -3,7 +3,7 @@
     $.ajax({
         url: "data.json"
     }).done(function(data){
-        var source  = document.getElementById("webProject").innerHTML;
+        var source  = document.getElementById("box").innerHTML;
         var template = Handlebars.complite(source);
         var html = template(data);
 
@@ -11,8 +11,10 @@
     })
 })();
 
-
 // handlebars interaction end
+
+
+//portfolio tabs change start
 
 var projectLink = document.getElementById("webPages");
 var projectGall = document.getElementById("webProjects");
@@ -57,3 +59,5 @@ textLink.onclick = function() {
         textLink.classList.add("active");
     }, 220);
 };
+
+//portfolio tabs change end
