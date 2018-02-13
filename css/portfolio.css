@@ -65,6 +65,11 @@
 .project-img-500, .project-img-360, .project-img {
   display: none; }
 
+@media screen and (min-width: 2000px) {
+  section.portfolio {
+    width: 100%;
+    padding: 80px; } }
+
 @media screen and (min-width: 1201px) {
   .project-desc {
     height: 256px;
