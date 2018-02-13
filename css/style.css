@@ -83,6 +83,7 @@ a {
   height: 100%;
   display: grid;
   grid-template-areas: "menu cite";
+  grid-template-columns: 0 100%;
   justify-items: stretch; }
 
 .menu-btn {
@@ -647,6 +648,16 @@ footer {
 #fb-hover-img:hover, #twitter-hover-img:hover, #li-hover-img:hover {
   opacity: 1;
   transition: all 0.5s; }
+
+@media screen and (min-width: 2000px) {
+  section {
+    width: 1500px;
+    justify-self: center; }
+    section.banner, section.skills {
+      width: 100%; }
+    section.skills {
+      grid-template-columns: 500px 500px 500px;
+      justify-content: center; } }
 
 @media screen and (max-width: 1500px) {
   :checked ~ .cite-wraper .body-container .skills {
