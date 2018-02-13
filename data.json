@@ -40,5 +40,85 @@
       "projectUrl" : "projects/businessTempl/index.html",
       "projectGitUrl" : "https://github.com/Pelazga/businessTempl"
     }
+    ],
+    "workplace" : [
+      {
+        "workId" : "manzana",
+        "companyLogo" : "images/work-exp/manzana.png",
+        "companyCite" : "https://manzana.ua",
+        "company" : "Manzana",
+        "position" : "Content Manager",
+        "workPeriod" : "May 2016 - Dec 2017",
+        "dutyes" : [
+          {
+            "duty" : "Наполнение сайта новой информацией и ее редактирование"
+          },
+          {
+            "duty" : "Создание и размещение на сайте баннеров"
+          },
+          {
+            "duty" : "Работа в админ.панели Magento"
+          },
+          {
+            "duty" : "Редактирование  существующих атрибутов товаров, создание новых атрибутов"
+          },
+          {
+            "duty" : "Редактирование изображений"
+          },
+          {
+            "duty" : "Съемка новых товаров, выбор и редактирование получившихся фото для размещения на сайте"
+          },
+          {
+            "duty" : "Написание и перевод текстов"
+          }
+        ]
+      },
+      {
+        "workId" : "stone-industry",
+        "companyLogo" : "images/work-exp/manzana.png",
+        "companyCite" : "https://manzana.ua",
+        "company" : "Каменная Индустрия",
+        "position" : "Комплектовщик",
+        "workPeriod" : "Май 2015 - Окт 2015",
+        "dutyes" : [
+          {
+            "duty" : "Наполнение сайта новой информацией и ее редактирование"
+          },
+          {
+            "duty" : "Создание и размещение на сайте баннеров"
+          },
+          {
+            "duty" : "Работа в админ.панели Magento"
+          },
+          {
+            "duty" : "Редактирование  существующих атрибутов товаров, создание новых атрибутов"
+          },
+          {
+            "duty" : "Редактирование изображений"
+          },
+          {
+            "duty" : "Съемка новых товаров, выбор и редактирование получившихся фото для размещения на сайте"
+          },
+          {
+            "duty" : "Написание и перевод текстов"
+          }
+        ]
+      },
+      {
+        "workId" : "global-bilgy",
+        "companyLogo" : "images/work-exp/manzana.png",
+        "companyCite" : "https://manzana.ua",
+        "company" : "Global Bilgy",
+        "position" : "Оператор колл-центра",
+        "workPeriod" : "Май 2015 - Окт 2015",
+        "dutyes" : [
+          {
+            "duty" : "Наполнение сайта новой информацией и ее редактирование"
+          },
+          {
+            "duty" : "Создание и размещение на сайте баннеров"
+          }
+        ]
+      }
     ]
   }

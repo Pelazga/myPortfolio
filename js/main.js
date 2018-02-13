@@ -1,51 +1,32 @@
-function throttle(func, ms) {
-
-	var isThrottled = false,
-	  savedArgs,
-	  savedThis;
-  
-	function wrapper() {
-  
-	  if (isThrottled) { // (2)
-		savedArgs = arguments;
-		savedThis = this;
-		return;	
-	  }
-  
-	  func.apply(this, arguments); // (1)
-  
-	  isThrottled = true;
-  
-	  setTimeout(function() {
-		isThrottled = false; // (3)
-		if (savedArgs) {
-		  wrapper.apply(savedThis, savedArgs);
-		  savedArgs = savedThis = null;
-		}
-	  }, ms);
-	}
-  
-	return wrapper;
-	}
-
 // обработка нажатия на подложку для попапов и кнопку esc начало
-var bgForPopUp = document.getElementById('bg_for_popup');
+$(document).ready(function() {
+	var bgForPopUp = document.getElementById('bg_for_popup');
 
-function hideEverything() {
-	bgForPopUp.classList.add('hidden');
-	loginWindow.classList.add('hidden');
-	popUpWindow.classList.add('hidden');
-	closeOpenedWindows();
-}
+	function hideEverything() {
+		bgForPopUp.classList.add('hidden');
+		loginWindow.classList.add('hidden');
+		popUpWindow.classList.add('hidden');
+		closeOpenedWindows();
+	}
 
-bgForPopUp.onclick = function(){
-	hideEverything();
-};
+	bgForPopUp.onclick = function(){
+		hideEverything();
+	};
 
-document.onkeydown = function (event){
-	if (event.keyCode == 27)
-	hideEverything();
-};
+	document.onkeydown = function (event){
+		if (event.keyCode == 27)
+		hideEverything();
+	};
+	function closeOpenedWindows() {
+		var workplaceInfoWind = document.querySelectorAll('.workplace-info');
+		for (i=0; i<workplaceInfoWind.length; i++){
+			if (workplaceInfoWind[i].classList.contains('active-workplace-info')){
+				workplaceInfoWind[i].classList.remove('active-workplace-info');
+			}
+		}
+		bgForPopUp.classList.add('hidden');
+	};
+});
 // обработка нажатия н подложку для попапов и кнопку esc конец
 
 

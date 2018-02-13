@@ -418,27 +418,27 @@ input[id="menu-btn"]{
 }
 .clouds-wrap{
     display: grid;   
-    // :nth-last-child() 
-}
-.right-cloud{
-    grid-template-areas: "none checkpoint cloud";
-    grid-template-columns: auto 10% 45%;
-}
-.left-cloud{
-    grid-template-areas: "cloud checkpoint none";
-    grid-template-columns: 45% 10% auto;   
+    &:nth-child(odd){
+        grid-template-areas: "none checkpoint cloud";
+        grid-template-columns: auto 10% 45%;
+        .checkpoint-wrapper{
+            background: url(../images/right-cloud.png) top right no-repeat;
+        }
+    } 
+    &:nth-child(even){
+        grid-template-areas: "cloud checkpoint none";
+        grid-template-columns: 45% 10% auto;
+        .checkpoint-wrapper{
+            background: url(../images/left-cloud.png) top left no-repeat;
+        }
+    } 
 }
 
-.leftside-checkpoint, .rightside-checkpoint{
+.checkpoint-wrapper{
     grid-area: checkpoint;
     z-index: 0;
 }
-.rightside-checkpoint{
-    background: url(../images/right-cloud.png) top right no-repeat;
-}
-.leftside-checkpoint{
-    background: url(../images/left-cloud.png) top left no-repeat;
-}
+
 .checkpoint{
     height: 40px;
     width: 40px;
@@ -883,13 +883,14 @@ footer{
             padding-bottom: 10px;
         }
     } 
-    .right-cloud, .left-cloud{
+    .clouds-wrap:nth-child(odd),
+    .clouds-wrap:nth-child(even){
         grid-template-areas: "checkpoint cloud";
         grid-template-columns: 120px auto;
         margin-bottom: 20px;
-    }
-    .leftside-checkpoint{
-        background: url(../images/right-cloud.png) top right no-repeat;
+        .checkpoint-wrapper{
+            background: url(../images/right-cloud.png) top right no-repeat;
+        }
     }
     .skills{
         grid-template-columns: 100%;
@@ -985,18 +986,20 @@ footer{
     .section{
         margin: 0 10px;
     }
-    .right-cloud, .left-cloud{
+    .clouds-wrap:nth-child(odd),
+    .clouds-wrap:nth-child(even){
         grid-template-areas: "cloud checkpoint";
         grid-template-columns: 100% 40px;   
         grid-template-rows: auto 0px;
-    }
-    .rightside-checkpoint, .leftside-checkpoint{
-        background: none;
-        position: relative;
-        right: 50px;
-        bottom: 100px;
-        .line{
-            display: none;
+        .checkpoint-wrapper{
+            grid-template-areas: "cloud";
+            grid-template-columns: 100%;
+            background: none;
+            position: relative;
+            right: 50px;
+            .line{
+                display: none;
+            }
         }
     }
     .workplace-info{
@@ -1025,10 +1028,6 @@ footer{
     }
     .active-workplace-info{
         width: 100%;
-    }
-    .right-cloud, .left-cloud{
-        grid-template-areas: "cloud";
-        grid-template-columns: 100%;
     }
     .work-place-cloud{
         padding-right: 50px;

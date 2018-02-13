@@ -319,24 +319,20 @@ input[id="menu-btn"] {
 
 .clouds-wrap {
   display: grid; }
+  .clouds-wrap:nth-child(odd) {
+    grid-template-areas: "none checkpoint cloud";
+    grid-template-columns: auto 10% 45%; }
+    .clouds-wrap:nth-child(odd) .checkpoint-wrapper {
+      background: url(../images/right-cloud.png) top right no-repeat; }
+  .clouds-wrap:nth-child(even) {
+    grid-template-areas: "cloud checkpoint none";
+    grid-template-columns: 45% 10% auto; }
+    .clouds-wrap:nth-child(even) .checkpoint-wrapper {
+      background: url(../images/left-cloud.png) top left no-repeat; }
 
-.right-cloud {
-  grid-template-areas: "none checkpoint cloud";
-  grid-template-columns: auto 10% 45%; }
-
-.left-cloud {
-  grid-template-areas: "cloud checkpoint none";
-  grid-template-columns: 45% 10% auto; }
-
-.leftside-checkpoint, .rightside-checkpoint {
+.checkpoint-wrapper {
   grid-area: checkpoint;
   z-index: 0; }
-
-.rightside-checkpoint {
-  background: url(../images/right-cloud.png) top right no-repeat; }
-
-.leftside-checkpoint {
-  background: url(../images/left-cloud.png) top left no-repeat; }
 
 .checkpoint {
   height: 40px;
@@ -686,12 +682,14 @@ footer {
   .workplace-info .close-wrap {
     padding-right: 23px;
     padding-bottom: 10px; }
-  .right-cloud, .left-cloud {
+  .clouds-wrap:nth-child(odd),
+  .clouds-wrap:nth-child(even) {
     grid-template-areas: "checkpoint cloud";
     grid-template-columns: 120px auto;
     margin-bottom: 20px; }
-  .leftside-checkpoint {
-    background: url(../images/right-cloud.png) top right no-repeat; }
+    .clouds-wrap:nth-child(odd) .checkpoint-wrapper,
+    .clouds-wrap:nth-child(even) .checkpoint-wrapper {
+      background: url(../images/right-cloud.png) top right no-repeat; }
   .skills {
     grid-template-columns: 100%;
     grid-template-areas: "heading" "section1" "section2" "section3";
@@ -756,17 +754,21 @@ footer {
     font-size: 18px; }
   .section {
     margin: 0 10px; }
-  .right-cloud, .left-cloud {
+  .clouds-wrap:nth-child(odd),
+  .clouds-wrap:nth-child(even) {
     grid-template-areas: "cloud checkpoint";
     grid-template-columns: 100% 40px;
     grid-template-rows: auto 0px; }
-  .rightside-checkpoint, .leftside-checkpoint {
-    background: none;
-    position: relative;
-    right: 50px;
-    bottom: 100px; }
-    .rightside-checkpoint .line, .leftside-checkpoint .line {
-      display: none; }
+    .clouds-wrap:nth-child(odd) .checkpoint-wrapper,
+    .clouds-wrap:nth-child(even) .checkpoint-wrapper {
+      grid-template-areas: "cloud";
+      grid-template-columns: 100%;
+      background: none;
+      position: relative;
+      right: 50px; }
+      .clouds-wrap:nth-child(odd) .checkpoint-wrapper .line,
+      .clouds-wrap:nth-child(even) .checkpoint-wrapper .line {
+        display: none; }
   .workplace-info {
     grid-template-areas: "close" "company-logo" "company-name" "position" "work-period" "duties";
     top: 10%;
@@ -784,9 +786,6 @@ footer {
       justify-self: center; }
   .active-workplace-info {
     width: 100%; }
-  .right-cloud, .left-cloud {
-    grid-template-areas: "cloud";
-    grid-template-columns: 100%; }
   .work-place-cloud {
     padding-right: 50px; }
   #mySkills {
