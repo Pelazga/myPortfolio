@@ -546,10 +546,14 @@ input[id="menu-btn"]{
         grid-area: duties;
         padding: 20px;
         font-family: $medium;
-        font-size: 28px;
+        font-size: 15px;
         color: white;
         ul li{
             padding: 5px;
+        }
+        p{
+            margin: 5px;
+            font-size: 15px;
         }
     }
 }
@@ -588,9 +592,6 @@ input[id="menu-btn"]{
     .work-period{
         color: $red;
         text-transform: uppercase;
-    }
-    .duties{
-        color: white;
     }
 }
 .education{

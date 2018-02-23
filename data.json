@@ -51,27 +51,31 @@
         "workPeriod" : "May 2016 - Dec 2017",
         "dutyes" : [
           {
-            "duty" : "Наполнение сайта новой информацией и ее редактирование"
+            "duty" : "Adding and editing info"
           },
           {
-            "duty" : "Создание и размещение на сайте баннеров"
+            "duty" : "Creating banners and it`s publication."
           },
           {
-            "duty" : "Работа в админ.панели Magento"
+            "duty" : "Work through Magento admin panel."
           },
           {
-            "duty" : "Редактирование  существующих атрибутов товаров, создание новых атрибутов"
+            "duty" : "Editing of goods attributes, creating of new ones if necessary."
           },
           {
-            "duty" : "Редактирование изображений"
+            "duty" : "Image editing."
           },
           {
-            "duty" : "Съемка новых товаров, выбор и редактирование получившихся фото для размещения на сайте"
+            "duty" : "Taking photo of new goods, their editing and publication."
           },
           {
-            "duty" : "Написание и перевод текстов"
+            "duty" : "Writing SEO texts."
+          },
+          {
+            "duty" : "Review translation."
           }
-        ]
+        ],
+        "aditionalInfo" : "Some aditional info"
       },
       {
         "workId" : "stone-industry",

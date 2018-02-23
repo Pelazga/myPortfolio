@@ -426,10 +426,13 @@ input[id="menu-btn"] {
     grid-area: duties;
     padding: 20px;
     font-family: "Raleway-Medium", Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 15px;
     color: white; }
     .workplace-info .duties ul li {
       padding: 5px; }
+    .workplace-info .duties p {
+      margin: 5px;
+      font-size: 15px; }
 
 .active-workplace-info {
   height: auto;
@@ -460,8 +463,6 @@ input[id="menu-btn"] {
   .work-place-cloud .work-period {
     color: #fb6470;
     text-transform: uppercase; }
-  .work-place-cloud .duties {
-    color: white; }
 
 .education {
   grid-area: education; }
